@@ -45,7 +45,6 @@
             max-width: 600px;
         }
     </style>
-
 </head>
 
 <body>
@@ -61,47 +60,47 @@
 
     <div class="container">
         <div class="apply_form">
-            <form method="post" action="">
+            <form method="post" action="RegServlet" id="form">
 
                 <input name="signup" type="hidden" class="form-control" value="1">
 
                 <div class="form-group question-item clearfix">
                     <label><span class="badge badge-secondary">1</span>账户名</label>
-                    <input name="" type="text" class="form-control">
+                    <input name="uName" type="text" class="form-control">
                     <p><small class="form-text text-muted float-right">必填</small></p>
                 </div>
 
                 <div class="form-group question-item clearfix">
                     <label><span class="badge badge-secondary">2</span>密码</label>
-                    <input name="" type="password" class="form-control">
+                    <input name="uPwd" type="password" class="form-control" id="pwd">
                     <p><small class="form-text text-muted float-right">必填</small></p>
                 </div>
 
                 <div class="form-group question-item clearfix">
                     <label><span class="badge badge-secondary">3</span>确认密码</label>
-                    <input name="" type="password" class="form-control">
+                    <input name="uIdenPwd" type="password" class="form-control" id="idenpwd">
                     <p><small class="form-text text-muted float-right">必填</small></p>
                 </div>
 
                 <div class="form-group question-item clearfix">
                     <label><span class="badge badge-secondary">4</span>昵称</label>
-                    <input name="" type="text" class="form-control">
+                    <input name="uNickName" type="text" class="form-control">
                     <p><small class="form-text text-muted float-right">必填</small></p>
                 </div>
 
                 <div class="form-group question-item clearfix">
-                    <label><span class="badge badge-secondary">4</span>邮箱</label>
-                    <input name="" type="email" class="form-control">
+                    <label><span class="badge badge-secondary">5</span>邮箱</label>
+                    <input name="uEmail" type="email" class="form-control">
                     <p><small class="form-text text-muted float-right">必填</small></p>
                 </div>
 
                 <div class="form-group question-item clearfix">
-                    <label><span class="badge badge-secondary">5</span>头像URL</label>
-                    <input name="" type="url" class="form-control">
+                    <label><span class="badge badge-secondary">6</span>头像URL</label>
+                    <input name="uFace" type="url" class="form-control">
                     <p><small class="form-text text-muted float-right">必填</small></p>
                 </div>
 
-                <button type="submit" class="btn btn-primary btn-lg btn-block">注册</button>
+                <button type="submit" class="btn btn-primary btn-lg btn-block" onclick="identify()">注册</button>
 
             </form>
         </div>
@@ -111,7 +110,18 @@
         <p>我的知识库</p>
     </div>
 </div>
+<script type="text/javascript">
+    function identify(){
+        if(document.getElementById("pwd")==document.getElementById("idenpwd")) {
+            return true;
+        }
+        else{
+            alert("error");
+            return false;
+        }
 
+    }
+</script>
 </body>
 
 </html>

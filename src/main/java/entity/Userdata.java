@@ -2,17 +2,18 @@ package entity;
 
 public class Userdata {
     private int id;
+    private String name;
     private String userName;
     private String password;
     private String avatar;
     private String email;
     private String reg_ip;
     private String log_ip;
-    private int role;
+    private String role;
     private int state;
 
-    public Userdata(int id, String string, String userName, String password, String avatar, String email, String reg_ip, String log_ip, int role, int state) {
-        this.id = id;
+    public Userdata(String name,String userName, String password, String avatar, String email, String reg_ip, String log_ip, String role, int state) {
+        this.name = name;
         this.userName = userName;
         this.password = password;
         this.avatar = avatar;
@@ -79,11 +80,11 @@ public class Userdata {
         this.log_ip = log_ip;
     }
 
-    public int getRole() {
+    public String getRole() {
         return role;
     }
 
-    public void setRole(int role) {
+    public void setRole(String role) {
         this.role = role;
     }
 
@@ -93,5 +94,13 @@ public class Userdata {
 
     public void setState(int state) {
         this.state = state;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 }
