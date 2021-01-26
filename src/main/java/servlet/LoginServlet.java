@@ -1,5 +1,6 @@
 package servlet;
 
+import database.Database;
 import entity.Userdata;
 import handler.LoginHandler;
 
@@ -10,6 +11,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
 
@@ -42,6 +45,15 @@ public class LoginServlet extends HttpServlet {
             }
             else {
                 printWriter.write("欢迎你, " + userdata.getUserName() + "!");
+                Database database=new Database();
+                Connection con=database.getConnection();
+                String log_ip = request.getRemoteAddr();
+                String UserName = userdata.getUserName();
+                PreparedStatement preparedStatement=con.prepareStatement("UPDATE user SET log_ip=? WHERE username = ?");
+                preparedStatement.setString(1,UserName);
+                preparedStatement.setString(2,log_ip);
+                preparedStatement.executeUpdate();
+                database.closeConnection();
             }
         } catch (ClassNotFoundException | SQLException e) {
             e.printStackTrace();
