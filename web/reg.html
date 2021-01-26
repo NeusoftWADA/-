@@ -58,38 +58,38 @@
                 <input name="signup" type="hidden" class="form-control" value="1">
 
                 <div class="form-group question-item clearfix">
-                    <label><span class="badge badge-secondary">1</span>账户名</label>
-                    <input name="uName" type="text" class="form-control">
+                    <label><span class="badge badge-secondary">1</span>用户名</label>
+                    <input name="uName" type="text" class="form-control" id="uName" placeholder="请输入用户名">
                     <p><small class="form-text text-muted float-right">必填</small></p>
                 </div>
 
                 <div class="form-group question-item clearfix">
                     <label><span class="badge badge-secondary">2</span>密码</label>
-                    <input name="uPwd" type="password" class="form-control" id="pwd">
+                    <input name="uPwd" type="password" class="form-control" id="uPwd" placeholder="请输入密码">
                     <p><small class="form-text text-muted float-right">必填</small></p>
                 </div>
 
                 <div class="form-group question-item clearfix">
                     <label><span class="badge badge-secondary">3</span>确认密码</label>
-                    <input name="uIdenPwd" type="password" class="form-control" id="idenpwd">
+                    <input name="uIdenPwd" type="password" class="form-control" id="uIdenpwd" placeholder="请确认密码">
                     <p><small class="form-text text-muted float-right">必填</small></p>
                 </div>
 
                 <div class="form-group question-item clearfix">
                     <label><span class="badge badge-secondary">4</span>昵称</label>
-                    <input name="uNickName" type="text" class="form-control">
+                    <input name="uNickName" type="text" class="form-control" id="uNickName" placeholder="请输入昵称">
                     <p><small class="form-text text-muted float-right">必填</small></p>
                 </div>
 
                 <div class="form-group question-item clearfix">
                     <label><span class="badge badge-secondary">5</span>邮箱</label>
-                    <input name="uEmail" type="email" class="form-control">
+                    <input name="uEmail" type="email" class="form-control" id="uEmail" placeholder="请输入邮箱">
                     <p><small class="form-text text-muted float-right">必填</small></p>
                 </div>
 
                 <div class="form-group question-item clearfix">
                     <label><span class="badge badge-secondary">6</span>头像URL</label>
-                    <input name="uFace" type="url" class="form-control">
+                    <input name="uFace" type="url" class="form-control" id="uFace" placeholder="请输入头像url地址">
                     <p><small class="form-text text-muted float-right">必填</small></p>
                 </div>
 
@@ -109,11 +109,17 @@
 <script type="text/javascript" src="https://cdn.staticfile.org/jquery/3.5.1/jquery.min.js"></script>
 <script type="text/javascript">
     $("#form").click(function(){
-        var pwd = $("#pwd").val();
-        var idenpwd = $("#idenpwd").val();
-
-        if ( pwd != idenpwd ) {
-            $("#msg").html("两次密码不一致！请重新数输入")
+        var uName = $("#uName").val();
+        var uPwd = $("#uPwd").val();
+        var uIdenpwd = $("#uIdenpwd").val();
+        var uNickName = $("#uNickName").val();
+        var uEmail = $("#uEmail").val();
+        var uFace = $("#uFace").val();
+        if (uName==null||uPwd==null||uIdenpwd==null||uNickName==null||uEmail==null||uFace==null){
+            $("#msg").html("不能输入空项！")
+        }
+        else if ( uPwd != uIdenpwd ) {
+            $("#msg").html("两次密码不一致！请重新数输入。")
         }
         else {
             $("#msg").html("")
