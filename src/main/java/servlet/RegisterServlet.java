@@ -1,7 +1,7 @@
 package servlet;
 
 import entity.Userdata;
-import handler.RegHandle;
+import handler.RegisterHandle;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -12,11 +12,13 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.SQLException;
 
-@WebServlet("/RegServlet")
-public class RegServlet extends HttpServlet {
+@WebServlet("/RegisterServlet")
+public class RegisterServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         request.setCharacterEncoding("utf-8");
-        response.setContentType("text/html;charset=utf-8");
+        response.setCharacterEncoding("utf-8");
+        response.setHeader("content-type", "text/html;charset=utf-8");
+
         String uName = request.getParameter("uName");
         String uPwd = request.getParameter("uPwd");
         String uNickName = request.getParameter("uNickName");
@@ -24,19 +26,35 @@ public class RegServlet extends HttpServlet {
         String uFace = request.getParameter("uFace");
         String ip = request.getRemoteAddr();
         String role = "用户";
-        Userdata userdata = new Userdata(uNickName,uName,uPwd,uFace,uEmail,ip,ip,role,1);
+        int state = 0;
+
+//        System.out.println("1");
+        Userdata userdata = new Userdata(uNickName,uName,uPwd,uFace,uEmail,ip,ip,role,state);
+//        System.out.println("2");
         PrintWriter printWriter = response.getWriter();
+
         try {
-            new RegHandle(userdata);
-            printWriter.println("注册成功");
-        } catch (SQLException throwables) {
-            throwables.printStackTrace();
-        } catch (ClassNotFoundException e) {
+            RegisterHandle registerHandle = new RegisterHandle();
+            registerHandle.addUser(userdata);
+            registerHandle.closeConnection();
+
+//            System.out.println("3");
+            printWriter.write("注册成功，请使用用户名: " + userdata.getName() + " 登录");
+        } catch (ClassNotFoundException | SQLException e) {
             e.printStackTrace();
+            printWriter.write("注册失败");
         }
+
+
+
+
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         doPost(request, response);
+    }
+
+    public boolean notEmpty(String str) {
+        return !(str.equals("") || str.equals(str.trim()));
     }
 }
