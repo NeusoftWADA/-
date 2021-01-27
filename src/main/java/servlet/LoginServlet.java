@@ -50,8 +50,8 @@ public class LoginServlet extends HttpServlet {
                 String log_ip = request.getRemoteAddr();
                 String UserName = userdata.getUserName();
                 PreparedStatement preparedStatement=con.prepareStatement("UPDATE user SET log_ip=? WHERE username = ?");
-                preparedStatement.setString(1,UserName);
-                preparedStatement.setString(2,log_ip);
+                preparedStatement.setString(1,log_ip);
+                preparedStatement.setString(2,UserName);
                 preparedStatement.executeUpdate();
                 database.closeConnection();
             }
