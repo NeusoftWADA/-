@@ -53,7 +53,6 @@
             font-size: 12px;
             margin: 40px 0;
         }
-
         .copyright a {
             color: #999;
         }
@@ -62,32 +61,32 @@
 
 <body>
 
-<div class="container">
+    <div class="container">
 
-    <form class="form-signin" method="post" action="LoginServlet">
+        <form class="form-signin" method="post" action="LoginServlet">
 
-        <h2 class="form-signin-heading">请登录</h2>
+            <h2 class="form-signin-heading">请登录</h2>
 
-        <label class="sr-only">username</label>
-        <input type="text" id="inputUsername" class="form-control" placeholder="账户" name="username" required autofocus>
+            <label class="sr-only">username</label>
+            <input type="text" id="inputUsername" class="form-control" placeholder="账户" name="username" required autofocus>
 
-        <label class="sr-only">password</label>
-        <input type="password" id="inputPassword" class="form-control" placeholder="密码" name="password" required>
+            <label class="sr-only">password</label>
+            <input type="password" id="inputPassword" class="form-control" placeholder="密码" name="password" required>
 
-        <div class="checkbox">
-            <label>
-                <input type="checkbox" value="remember-me"> 记住我
-            </label>
+            <div class="checkbox">
+                <label>
+                    <input type="checkbox" value="remember-me"> 记住我
+                </label>
+            </div>
+
+            <button class="btn btn-lg btn-primary btn-block" type="submit">登录</button>
+
+        </form>
+        <div class="copyright text-center">
+            <p>我的知识库</p>
         </div>
 
-        <button class="btn btn-lg btn-primary btn-block" type="submit">登录</button>
-
-    </form>
-    <div class="copyright text-center">
-        <p>我的知识库</p>
     </div>
-
-</div>
 
 </body>
 </html>
