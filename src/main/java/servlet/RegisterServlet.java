@@ -28,9 +28,8 @@ public class RegisterServlet extends HttpServlet {
         String role = "用户";
         int state = 0;
 
-//        System.out.println("1");
         Userdata userdata = new Userdata(uNickName,uName,uPwd,uFace,uEmail,ip,ip,role,state);
-//        System.out.println("2");
+
         PrintWriter printWriter = response.getWriter();
 
         try {
@@ -38,7 +37,6 @@ public class RegisterServlet extends HttpServlet {
             registerHandle.addUser(userdata);
             registerHandle.closeConnection();
 
-//            System.out.println("3");
             printWriter.write("注册成功，请使用用户名: " + userdata.getName() + " 登录");
         } catch (ClassNotFoundException | SQLException e) {
             e.printStackTrace();
