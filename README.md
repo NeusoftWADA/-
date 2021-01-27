@@ -15,13 +15,3 @@
 - [ ] 2月25日 完成剩余3个模块的开发
 
 ![image-20210125163954381](https://picbedd.oss-cn-beijing.aliyuncs.com/image-20210125163954381.png)
-
-# 登陆注册进度
-
-- [x] 登录前端
-- [x] 登录后端
-  - [x] 每次登录时更新log_ip
-- [x] 注册前端
-  - [x] 验证每个输入框非空
-  - [x] 补全每个输入框placeholder
-- [x] 注册后端
