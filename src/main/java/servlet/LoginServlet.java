@@ -41,10 +41,10 @@ public class LoginServlet extends HttpServlet {
             else {
                 printWriter.write("欢迎你, " + userdata.getUserName() + "!");
 
-                //通过用户id更新当前登录ip
+                //通过用户email更新当前登录ip
                 String log_ip = request.getRemoteAddr();
-                int id = userdata.getId();
-                loginHandler.updateLoginIP(log_ip, id);
+                String email = userdata.getEmail();
+                loginHandler.updateLoginIP(log_ip, email);
 
             }
             loginHandler.closeConnection();

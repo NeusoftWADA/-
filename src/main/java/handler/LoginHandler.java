@@ -55,10 +55,10 @@ public class LoginHandler {
         }
     }
 
-    public void updateLoginIP(String ip, int id) throws SQLException {
-        PreparedStatement preparedStatement=connection.prepareStatement("UPDATE user SET log_ip = ? WHERE id = ?");
+    public void updateLoginIP(String ip, String email) throws SQLException {
+        PreparedStatement preparedStatement=connection.prepareStatement("UPDATE user SET log_ip = ? WHERE email = ?");
         preparedStatement.setString(1,ip);
-        preparedStatement.setInt(2,id);
+        preparedStatement.setString(2,email);
         preparedStatement.executeUpdate();
     }
 }
