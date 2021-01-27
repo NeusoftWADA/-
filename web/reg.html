@@ -96,7 +96,7 @@
                 <div>
                     <span id="msg" style="front-size: 12px;color: red"></span>
                 </div>
-                <button type="submit" class="btn btn-primary btn-lg btn-block" id="loginBtn">注册</button>
+                <button type="submit" class="btn btn-primary btn-lg btn-block" id="loginBtn" onclick="return test()">注册</button>
 
             </form>
         </div>
@@ -108,16 +108,17 @@
 </div>
 <script type="text/javascript" src="https://cdn.staticfile.org/jquery/3.5.1/jquery.min.js"></script>
 <script type="text/javascript">
-    $("#form").click(function(){
+    function test(){
         var uPwd = $("#uPwd").val();
         var uIdenpwd = $("#uIdenpwd").val();
         if ( uPwd != uIdenpwd ) {
             $("#msg").html("两次密码不一致！请重新数输入。")
+            return false;
         }
         else {
-            $("#msg").html("")
+            return true;
         }
-    });
+    }
 </script>
 </body>
 
