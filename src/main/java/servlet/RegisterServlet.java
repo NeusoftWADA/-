@@ -27,9 +27,8 @@ public class RegisterServlet extends HttpServlet {
         String role = "用户";
         int state = 0;
 
-//        System.out.println("1");
         Userdata userdata = new Userdata(uNickName,uName,uPwd,uFace,uEmail,ip,ip,role,state);
-//        System.out.println("2");
+
         PrintWriter printWriter = response.getWriter();
 
         try {
