@@ -44,8 +44,7 @@ public class LoginHandler {
 
         ResultSet resultSet = preparedStatement.getResultSet();
         if ( resultSet.next() ) {
-//            String name = resultSet.getString("username");//从数据库中获取的username
-//            String pwd = resultSet.getString("password");//从数据库中获取的password
+
 //            如果能够查询出结果，将该用户实例封装返回
             Userdata userdata = new Userdata(resultSet.getString(2), resultSet.getString(3), resultSet.getString(4), resultSet.getString(5), resultSet.getString(6), resultSet.getString(7), resultSet.getString(8), resultSet.getString(9), resultSet.getInt(10));
             userdata.setId(resultSet.getInt(1));
@@ -54,5 +53,12 @@ public class LoginHandler {
         else {
             return null;
         }
+    }
+
+    public void updateLoginIP(String ip, int id) throws SQLException {
+        PreparedStatement preparedStatement=connection.prepareStatement("UPDATE user SET log_ip = ? WHERE id = ?");
+        preparedStatement.setString(1,ip);
+        preparedStatement.setInt(2,id);
+        preparedStatement.executeUpdate();
     }
 }

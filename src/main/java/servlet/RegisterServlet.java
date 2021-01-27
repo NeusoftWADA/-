@@ -36,7 +36,6 @@ public class RegisterServlet extends HttpServlet {
             registerHandle.addUser(userdata);
             registerHandle.closeConnection();
 
-//            System.out.println("3");
             printWriter.write("注册成功，请使用用户名: " + userdata.getUserName() + " 登录");
         } catch (ClassNotFoundException | SQLException e) {
             e.printStackTrace();

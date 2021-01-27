@@ -1,18 +1,14 @@
 package servlet;
 
-import database.Database;
 import entity.Userdata;
 import handler.LoginHandler;
 
-import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
 
@@ -38,31 +34,28 @@ public class LoginServlet extends HttpServlet {
 
             LoginHandler loginHandler = new LoginHandler();
             Userdata userdata = loginHandler.check(username, password);
-            loginHandler.closeConnection();
 
             if ( userdata == null ) {
                 printWriter.write("用户不存在或密码错误");
             }
             else {
                 printWriter.write("欢迎你, " + userdata.getUserName() + "!");
-                Database database=new Database();
-                Connection con=database.getConnection();
+
+                //通过用户id更新当前登录ip
                 String log_ip = request.getRemoteAddr();
-                String UserName = userdata.getUserName();
-                PreparedStatement preparedStatement=con.prepareStatement("UPDATE user SET log_ip=? WHERE username = ?");
-                preparedStatement.setString(1,log_ip);
-                preparedStatement.setString(2,UserName);
-                preparedStatement.executeUpdate();
-                database.closeConnection();
+                int id = userdata.getId();
+                loginHandler.updateLoginIP(log_ip, id);
+
             }
+            loginHandler.closeConnection();
+
         } catch (ClassNotFoundException | SQLException e) {
             e.printStackTrace();
             printWriter.write("登陆失败");
         }
-
     }
 
-    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
         //固定操作，不论method是post还是get，都能互相调用
         doPost(request, response);
     }

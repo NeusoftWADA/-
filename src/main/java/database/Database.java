@@ -11,10 +11,6 @@ public class Database {
                 "myk1", "myk1");
     }
 
-    public void closeConnection() throws SQLException {
-        connection.close();
-    }
-
     public void testConnection() {
         System.out.println(this.connection);
     }
