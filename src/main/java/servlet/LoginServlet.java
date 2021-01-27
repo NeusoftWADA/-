@@ -18,7 +18,7 @@ import java.sql.SQLException;
 
 @WebServlet("/LoginServlet")
 public class LoginServlet extends HttpServlet {
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
         //固定操作，设置字符格式
         request.setCharacterEncoding("utf-8");
         response.setCharacterEncoding("utf-8");
