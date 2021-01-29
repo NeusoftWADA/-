@@ -146,11 +146,14 @@
 
 
                     <div style="padding: 8px 0; color: #ccc"></div>
-                    <div id="div1" class="toolbar"></div>
 
-                    <div id="div2" class="text">
-
-                    </div>
+                    <div id="editor"></div>
+                    <script type="text/javascript" src="/wangEditor.min.js"></script>
+                    <script type="text/javascript">
+                        var E = window.wangEditor
+                        var editor = new E('#editor')
+                        editor.create()
+                    </script>
 
                     <div class="row">
 
