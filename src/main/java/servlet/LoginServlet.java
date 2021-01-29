@@ -7,6 +7,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.SQLException;
@@ -39,6 +40,8 @@ public class LoginServlet extends HttpServlet {
                 printWriter.write("用户不存在或密码错误");
             }
             else {
+                //登录成功，存入session
+                request.getSession().setAttribute("user_session", userdata);
                 printWriter.write("欢迎你, " + userdata.getUserName() + "!");
 
                 //通过用户email更新当前登录ip
