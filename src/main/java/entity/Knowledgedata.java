@@ -9,6 +9,7 @@ public class Knowledgedata {
     private String Abstract;
     private String content;
     private Date createTime;
+
     public Knowledgedata(int k_id,int user_id,String title,String Abstract,String content,Date createTime){
         this.k_id=k_id;
         this.user_id=user_id;
@@ -16,6 +17,8 @@ public class Knowledgedata {
         this.Abstract=Abstract;
         this.content=content;
         this.createTime=createTime;
+    }
+    public Knowledgedata() {
     }
 
     public int getK_id() {

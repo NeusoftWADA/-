@@ -915,132 +915,145 @@
 
                 <div class="card-body" style="min-height: 1000px">
 
-                    <div class="row">
-                        <div class="col-md-12">
-                            <div class="input-group mb-1 mt-2 ml-0 mr-1">
-                                <div class="input-group-prepend">
-                                    <span class="input-group-text">标题</span>
+                    <form action="EnterServlet" method="post">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="input-group mb-1 mt-2 ml-0 mr-1">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text">标题</span>
+                                    </div>
+                                    <input id="titleInput" type="text" class="form-control" placeholder="不多于20字"
+                                           style="margin-right: 5px" name="title">
                                 </div>
-                                <input id="titleInput" type="text" class="form-control" placeholder="不多于20字"
-                                       style="margin-right: 5px">
+
+                                <div class="input-group mb-1 mt-2 ml-0 mr-1">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text">摘要</span>
+                                    </div>
+                                    <input id="abstractInput" type="text" class="form-control" placeholder="不多于20字"
+                                           style="margin-right: 5px" name="Abstract">
+                                </div>
+
                             </div>
 
                         </div>
 
-                    </div>
 
+                        <div style="padding: 8px 0; color: #ccc"></div>
 
-                    <div style="padding: 8px 0; color: #ccc"></div>
-
-                    <div id="editor">
-                        <div style="background-color:#FFF; border:1px solid #c9d8db; border-bottom:1px solid #EEE; z-index:10001;"
-                             class="w-e-toolbar" id="toolbar-elem43020064870014596">
-                            <div class="w-e-menu" data-title="标题"><i class="w-e-icon-header"></i></div>
-                            <div class="w-e-menu" data-title="加粗">
-                                <i class="w-e-icon-bold"></i>
-                            </div>
-                            <div class="w-e-menu" data-title="字号">
-                                <i class="w-e-icon-text-heigh"></i>
-                            </div>
-                            <div class="w-e-menu" data-title="字体">
-                                <i class="w-e-icon-font"></i>
-                            </div>
-                            <div class="w-e-menu" data-title="斜体">
-                                <i class="w-e-icon-italic"></i>
-                            </div>
-                            <div class="w-e-menu" data-title="下划线">
-                                <i class="w-e-icon-underline"></i>
-                            </div>
-                            <div class="w-e-menu" data-title="删除线">
-                                <i class="w-e-icon-strikethrough"></i>
-                            </div>
-                            <div class="w-e-menu" data-title="缩进">
-                                <i class="w-e-icon-indent-increase"></i>
-                            </div>
-                            <div class="w-e-menu" data-title="行高">
-                                <i class="w-e-icon-row-height"></i>
-                            </div>
-                            <div class="w-e-menu" data-title="文字颜色">
-                                <i class="w-e-icon-pencil2"></i>
-                            </div>
-                            <div class="w-e-menu" data-title="背景色">
-                                <i class="w-e-icon-paint-brush"></i>
-                            </div>
-                            <div class="w-e-menu" data-title="链接"><i class="w-e-icon-link"></i></div>
-                            <div class="w-e-menu" data-title="序列">
-                                <i class="w-e-icon-list2"></i>
-                            </div>
-                            <div class="w-e-menu" data-title="待办事项">
-                                <i class="w-e-icon-checkbox-checked"></i>
-                            </div>
-                            <div class="w-e-menu" data-title="对齐"><i class="w-e-icon-paragraph-left"></i></div>
-                            <div class="w-e-menu" data-title="引用">
-                                <i class="w-e-icon-quotes-left"></i>
-                            </div>
-                            <div class="w-e-menu" data-title="表情">
-                                <i class="w-e-icon-happy"></i>
-                            </div>
-                            <div class="w-e-menu" data-title="图片"><i class="w-e-icon-image"></i></div>
-                            <div class="w-e-menu" data-title="视频">
-                                <i class="w-e-icon-play"></i>
-                            </div>
-                            <div class="w-e-menu" data-title="表格"><i class="w-e-icon-table2"></i></div>
-                            <div class="w-e-menu" data-title="代码"><i class="w-e-icon-terminal"></i></div>
-                            <div class="w-e-menu" data-title="分割线"><i class="w-e-icon-split-line"></i></div>
-                            <div class="w-e-menu" data-title="撤销">
-                                <i class="w-e-icon-undo"></i>
-                            </div>
-                            <div class="w-e-menu" data-title="恢复">
-                                <i class="w-e-icon-redo"></i>
-                            </div>
-                            <div class="w-e-menu-tooltip w-e-menu-tooltip-up"
-                                 style="visibility:hidden; z-index:10001;">
-                                <div class="w-e-menu-tooltip-item-wrapper">
-                                    <div></div>
+                        <div id="editor">
+                            <div style="background-color:#FFF; border:1px solid #c9d8db; border-bottom:1px solid #EEE; z-index:10001;"
+                                 class="w-e-toolbar" id="toolbar-elem43020064870014596">
+                                <div class="w-e-menu" data-title="标题"><i class="w-e-icon-header"></i></div>
+                                <div class="w-e-menu" data-title="加粗">
+                                    <i class="w-e-icon-bold"></i>
+                                </div>
+                                <div class="w-e-menu" data-title="字号">
+                                    <i class="w-e-icon-text-heigh"></i>
+                                </div>
+                                <div class="w-e-menu" data-title="字体">
+                                    <i class="w-e-icon-font"></i>
+                                </div>
+                                <div class="w-e-menu" data-title="斜体">
+                                    <i class="w-e-icon-italic"></i>
+                                </div>
+                                <div class="w-e-menu" data-title="下划线">
+                                    <i class="w-e-icon-underline"></i>
+                                </div>
+                                <div class="w-e-menu" data-title="删除线">
+                                    <i class="w-e-icon-strikethrough"></i>
+                                </div>
+                                <div class="w-e-menu" data-title="缩进">
+                                    <i class="w-e-icon-indent-increase"></i>
+                                </div>
+                                <div class="w-e-menu" data-title="行高">
+                                    <i class="w-e-icon-row-height"></i>
+                                </div>
+                                <div class="w-e-menu" data-title="文字颜色">
+                                    <i class="w-e-icon-pencil2"></i>
+                                </div>
+                                <div class="w-e-menu" data-title="背景色">
+                                    <i class="w-e-icon-paint-brush"></i>
+                                </div>
+                                <div class="w-e-menu" data-title="链接"><i class="w-e-icon-link"></i></div>
+                                <div class="w-e-menu" data-title="序列">
+                                    <i class="w-e-icon-list2"></i>
+                                </div>
+                                <div class="w-e-menu" data-title="待办事项">
+                                    <i class="w-e-icon-checkbox-checked"></i>
+                                </div>
+                                <div class="w-e-menu" data-title="对齐"><i class="w-e-icon-paragraph-left"></i></div>
+                                <div class="w-e-menu" data-title="引用">
+                                    <i class="w-e-icon-quotes-left"></i>
+                                </div>
+                                <div class="w-e-menu" data-title="表情">
+                                    <i class="w-e-icon-happy"></i>
+                                </div>
+                                <div class="w-e-menu" data-title="图片"><i class="w-e-icon-image"></i></div>
+                                <div class="w-e-menu" data-title="视频">
+                                    <i class="w-e-icon-play"></i>
+                                </div>
+                                <div class="w-e-menu" data-title="表格"><i class="w-e-icon-table2"></i></div>
+                                <div class="w-e-menu" data-title="代码"><i class="w-e-icon-terminal"></i></div>
+                                <div class="w-e-menu" data-title="分割线"><i class="w-e-icon-split-line"></i></div>
+                                <div class="w-e-menu" data-title="撤销">
+                                    <i class="w-e-icon-undo"></i>
+                                </div>
+                                <div class="w-e-menu" data-title="恢复">
+                                    <i class="w-e-icon-redo"></i>
+                                </div>
+                                <div class="w-e-menu-tooltip w-e-menu-tooltip-up"
+                                     style="visibility:hidden; z-index:10001;">
+                                    <div class="w-e-menu-tooltip-item-wrapper">
+                                        <div></div>
+                                    </div>
+                                </div>
+                                <div class="w-e-menu" data-title="全屏">
+                                    <i class="w-e-icon-fullscreen"></i>
                                 </div>
                             </div>
-                            <div class="w-e-menu" data-title="全屏">
-                                <i class="w-e-icon-fullscreen"></i>
-                            </div>
-                        </div>
-                        <div style="border:1px solid #c9d8db; border-top:none; height:300px; z-index:10000;"
-                             class="w-e-text-container">
-                            <div contenteditable="true" style="width:100%; height:100%;" class="w-e-text"
-                                 id="text-elem41734206260716245">
-                                <p><br></p>
-                            </div>
-                            <div class="placeholder">请输入正文</div>
-                            <div class="w-e-img-drag-mask" style="display:none;">
-                                <div class="w-e-img-drag-show-size"></div>
-                                <div class="w-e-img-drag-rb"></div>
-                            </div>
-                        </div>
-                    </div>
-
-
-                    <div class="row">
-
-                        <div class="col-md-5">
-                            <div class="input-group mb-3 mt-3 ml-0">
-                                <div class="input-group-prepend">
-                                    <span class="input-group-text" id="inputGroup-sizing-default">知识点分类</span>
+                            <div style="border:1px solid #c9d8db; border-top:none; height:300px; z-index:10000;"
+                                 class="w-e-text-container">
+                            <textarea contenteditable="true" style="width:100%; height:100%;" class="w-e-text"
+                                      id="text-elem41734206260716245" placeholder="请输入正文" name="content">
+                            </textarea>
+                                <div class="w-e-img-drag-mask" style="display:none;">
+                                    <div class="w-e-img-drag-show-size"></div>
+                                    <div class="w-e-img-drag-rb"></div>
                                 </div>
-                                <input id="categoryInput" type="text" class="form-control">
                             </div>
                         </div>
-                    </div>
 
 
-                    <div class="row" style="padding: 15px">
+                        <div class="row">
 
-                        <div class="col-md-1"></div>
-                        <div class="col-md-2 ml-0">
-                            <button type="button" class="btn btn-primary" id="publishBtn">发布</button>
+                            <div class="col-md-5">
+                                <div class="input-group mb-3 mt-3 ml-0">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text" id="inputGroup-sizing-default">知识点分类</span>
+                                    </div>
+                                    <input id="categoryInput" type="text" class="form-control" name="category">
+                                </div>
+                            </div>
                         </div>
-                        <div class="col-md-4">
-                            <button type="button" class="btn btn-light">返回</button>
+
+                        <div class="row" style="padding: 15px">
+
+                            <div class="col-md-1"></div>
+                            <div class="col-md-2 ml-0">
+                                <button type="submit" class="btn btn-primary" id="publishBtn">发布</button>
+                            </div>
+                            <div class="col-md-4">
+                                <button type="button" class="btn btn-light">返回</button>
+                            </div>
                         </div>
-                    </div>
+
+                    </form>
+
+
+
+
+
 
                 </div>
 
