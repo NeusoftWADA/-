@@ -55,6 +55,12 @@ public class LoginHandler {
         }
     }
 
+    /**
+     * 每次登录时更新登录ip
+     * @param ip
+     * @param email
+     * @throws SQLException
+     */
     public void updateLoginIP(String ip, String email) throws SQLException {
         PreparedStatement preparedStatement=connection.prepareStatement("UPDATE user SET log_ip = ? WHERE email = ?");
         preparedStatement.setString(1,ip);
