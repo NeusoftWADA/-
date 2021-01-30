@@ -922,7 +922,7 @@
                                     <div class="input-group-prepend">
                                         <span class="input-group-text">标题</span>
                                     </div>
-                                    <input id="titleInput" type="text" class="form-control" placeholder="不多于20字"
+                                    <input id="titleInput" type="text" class="form-control" placeholder="请输入标题"
                                            style="margin-right: 5px" name="title">
                                 </div>
 
@@ -930,7 +930,7 @@
                                     <div class="input-group-prepend">
                                         <span class="input-group-text">摘要</span>
                                     </div>
-                                    <input id="abstractInput" type="text" class="form-control" placeholder="不多于20字"
+                                    <input id="abstractInput" type="text" class="form-control" placeholder="请输入摘要"
                                            style="margin-right: 5px" name="Abstract">
                                 </div>
 
