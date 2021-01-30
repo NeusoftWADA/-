@@ -38,21 +38,21 @@ public class LoginServlet extends HttpServlet {
             Userdata userdata = loginHandler.check(username, password);
 
             if ( userdata == null ) {
-                printWriter.write("用户不存在或密码错误");
+                printWriter.write("用户不存在或密码错误，请返回重新登录");
             }
             else {
-                //登录成功，存入session
-                request.getSession().setAttribute("user_session", userdata);
-
 //                printWriter.write("欢迎你, " + userdata.getUserName() + "!");
 
                 //通过用户email更新当前登录ip
                 String log_ip = request.getRemoteAddr();
                 String email = userdata.getEmail();
                 loginHandler.updateLoginIP(log_ip, email);
+
+                //登录成功，存入session
+                request.getSession().setAttribute("user_session", userdata.getName());
                 //转向知识点录入
-//                request.setCharacterEncoding("GBK");
-                request.getRequestDispatcher("entering.html").forward(request, response);
+                request.getRequestDispatcher("entering.jsp").forward(request, response);
+
             }
             loginHandler.closeConnection();
 

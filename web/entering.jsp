@@ -1,8 +1,10 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+pageEncoding="UTF-8"%>
 <html lang="en">
 
 <head>
-    <title>∑¢≤º÷™ ∂µ„</title>
-    <meta charset="GB2312">
+    <title>ÂèëÂ∏ÉÁü•ËØÜÁÇπ</title>
+    <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
@@ -18,8 +20,8 @@
             margin: 0;
             box-sizing: border-box;
             background-color: #fff;
-            /*±Ì«È≤Àµ•—˘ Ω*/
-            /*∑÷∏Óœﬂ—˘ Ω*/
+            /*Ë°®ÊÉÖËèúÂçïÊ†∑Âºè*/
+            /*ÂàÜÂâ≤Á∫øÊ†∑Âºè*/
         }
 
         .w-e-toolbar h1,
@@ -285,7 +287,7 @@
             padding: 0 6px;
             flex-wrap: wrap;
             position: relative;
-            /* µ•∏ˆ≤Àµ• */
+            /* Âçï‰∏™ËèúÂçï */
         }
 
         .w-e-toolbar .w-e-menu {
@@ -522,8 +524,8 @@
             color: #333;
             background-color: #fff;
             text-align: left;
-            /* Œ™ emotion panel ∂®÷∆µƒ—˘ Ω */
-            /* …œ¥´Õº∆¨°¢…œ¥´ ”∆µµƒ panel ∂®÷∆—˘ Ω */
+            /* ‰∏∫ emotion panel ÂÆöÂà∂ÁöÑÊ†∑Âºè */
+            /* ‰∏ä‰º†ÂõæÁâá„ÄÅ‰∏ä‰º†ËßÜÈ¢ëÁöÑ panel ÂÆöÂà∂Ê†∑Âºè */
         }
 
         .w-e-menu .w-e-panel-container .w-e-panel-close {
@@ -567,8 +569,8 @@
         .w-e-menu .w-e-panel-container .w-e-panel-tab-content {
             padding: 10px 15px 10px 15px;
             font-size: 16px;
-            /*  ‰»ÎøÚµƒ—˘ Ω */
-            /* ∞¥≈•µƒ—˘ Ω */
+            /* ËæìÂÖ•Ê°ÜÁöÑÊ†∑Âºè */
+            /* ÊåâÈíÆÁöÑÊ†∑Âºè */
         }
 
         .w-e-menu .w-e-panel-container .w-e-panel-tab-content input:focus,
@@ -839,6 +841,10 @@
 
 <body style="background-color: whitesmoke">
 
+<%
+    String username=session.getAttribute("user_session").toString();  //Ëé∑Âèñ‰øùÂ≠òÂú®sessionËåÉÂõ¥ÂÜÖÁöÑÁî®Êà∑Âêç
+%>
+
 <div class="container-fluid">
     <div class="row">
         <div class="col-md-12" style="padding: 0">
@@ -849,7 +855,9 @@
                     <ul class="navbar-nav mr-auto"></ul>
 
                     <span class="navbar-nav">
-                            <a class="nav-link navbar-item active" href="#">∏ˆ»À÷––ƒ</a>
+                            <a class="nav-link navbar-item active" href="#">
+                                ÊÇ®Â•Ω, <%=username%> Ê¨¢ËøéËÆøÈóÆ~
+                            </a>
                         </span>
                 </div>
             </nav>
@@ -877,7 +885,7 @@
 
                         <ul class="nav nav-pills nav-fill flex-column">
                             <li class="nav-item">
-                                <a class="nav-link active list-group-item">∑¢≤º÷™ ∂µ„</a>
+                                <a class="nav-link active list-group-item">ÂèëÂ∏ÉÁü•ËØÜÁÇπ</a>
                             </li>
                         </ul>
                     </div>
@@ -893,7 +901,7 @@
             <div class="card">
                 <div class="card-header" style="background-color: white">
                     <div class="row">
-                        <div class="col-md-3" style="font-size: 18px">∑¢≤º÷™ ∂µ„</div>
+                        <div class="col-md-3" style="font-size: 18px">ÂèëÂ∏ÉÁü•ËØÜÁÇπ</div>
                     </div>
                 </div>
 
@@ -903,9 +911,9 @@
                         <div class="col-md-12">
                             <div class="input-group mb-1 mt-2 ml-0 mr-1">
                                 <div class="input-group-prepend">
-                                    <span class="input-group-text">±ÍÃ‚</span>
+                                    <span class="input-group-text">Ê†áÈ¢ò</span>
                                 </div>
-                                <input id="titleInput" type="text" class="form-control" placeholder="≤ª∂‡”⁄20◊÷"
+                                <input id="titleInput" type="text" class="form-control" placeholder="‰∏çÂ§ö‰∫é20Â≠ó"
                                        style="margin-right: 5px">
                             </div>
 
@@ -919,62 +927,62 @@
                     <div id="editor">
                         <div style="background-color:#FFF; border:1px solid #c9d8db; border-bottom:1px solid #EEE; z-index:10001;"
                              class="w-e-toolbar" id="toolbar-elem43020064870014596">
-                            <div class="w-e-menu" data-title="±ÍÃ‚"><i class="w-e-icon-header"></i></div>
-                            <div class="w-e-menu" data-title="º”¥÷">
+                            <div class="w-e-menu" data-title="Ê†áÈ¢ò"><i class="w-e-icon-header"></i></div>
+                            <div class="w-e-menu" data-title="Âä†Á≤ó">
                                 <i class="w-e-icon-bold"></i>
                             </div>
-                            <div class="w-e-menu" data-title="◊÷∫≈">
+                            <div class="w-e-menu" data-title="Â≠óÂè∑">
                                 <i class="w-e-icon-text-heigh"></i>
                             </div>
-                            <div class="w-e-menu" data-title="◊÷ÃÂ">
+                            <div class="w-e-menu" data-title="Â≠ó‰Ωì">
                                 <i class="w-e-icon-font"></i>
                             </div>
-                            <div class="w-e-menu" data-title="–±ÃÂ">
+                            <div class="w-e-menu" data-title="Êñú‰Ωì">
                                 <i class="w-e-icon-italic"></i>
                             </div>
-                            <div class="w-e-menu" data-title="œ¬ªÆœﬂ">
+                            <div class="w-e-menu" data-title="‰∏ãÂàíÁ∫ø">
                                 <i class="w-e-icon-underline"></i>
                             </div>
-                            <div class="w-e-menu" data-title="…æ≥˝œﬂ">
+                            <div class="w-e-menu" data-title="Âà†Èô§Á∫ø">
                                 <i class="w-e-icon-strikethrough"></i>
                             </div>
-                            <div class="w-e-menu" data-title="ÀıΩ¯">
+                            <div class="w-e-menu" data-title="Áº©Ëøõ">
                                 <i class="w-e-icon-indent-increase"></i>
                             </div>
-                            <div class="w-e-menu" data-title="––∏ﬂ">
+                            <div class="w-e-menu" data-title="Ë°åÈ´ò">
                                 <i class="w-e-icon-row-height"></i>
                             </div>
-                            <div class="w-e-menu" data-title="Œƒ◊÷—’…´">
+                            <div class="w-e-menu" data-title="ÊñáÂ≠óÈ¢úËâ≤">
                                 <i class="w-e-icon-pencil2"></i>
                             </div>
-                            <div class="w-e-menu" data-title="±≥æ∞…´">
+                            <div class="w-e-menu" data-title="ËÉåÊôØËâ≤">
                                 <i class="w-e-icon-paint-brush"></i>
                             </div>
-                            <div class="w-e-menu" data-title="¡¥Ω”"><i class="w-e-icon-link"></i></div>
-                            <div class="w-e-menu" data-title="–Ú¡–">
+                            <div class="w-e-menu" data-title="ÈìæÊé•"><i class="w-e-icon-link"></i></div>
+                            <div class="w-e-menu" data-title="Â∫èÂàó">
                                 <i class="w-e-icon-list2"></i>
                             </div>
-                            <div class="w-e-menu" data-title="¥˝∞Ï ¬œÓ">
+                            <div class="w-e-menu" data-title="ÂæÖÂäû‰∫ãÈ°π">
                                 <i class="w-e-icon-checkbox-checked"></i>
                             </div>
-                            <div class="w-e-menu" data-title="∂‘∆Î"><i class="w-e-icon-paragraph-left"></i></div>
-                            <div class="w-e-menu" data-title="“˝”√">
+                            <div class="w-e-menu" data-title="ÂØπÈΩê"><i class="w-e-icon-paragraph-left"></i></div>
+                            <div class="w-e-menu" data-title="ÂºïÁî®">
                                 <i class="w-e-icon-quotes-left"></i>
                             </div>
-                            <div class="w-e-menu" data-title="±Ì«È">
+                            <div class="w-e-menu" data-title="Ë°®ÊÉÖ">
                                 <i class="w-e-icon-happy"></i>
                             </div>
-                            <div class="w-e-menu" data-title="Õº∆¨"><i class="w-e-icon-image"></i></div>
-                            <div class="w-e-menu" data-title=" ”∆µ">
+                            <div class="w-e-menu" data-title="ÂõæÁâá"><i class="w-e-icon-image"></i></div>
+                            <div class="w-e-menu" data-title="ËßÜÈ¢ë">
                                 <i class="w-e-icon-play"></i>
                             </div>
-                            <div class="w-e-menu" data-title="±Ì∏Ò"><i class="w-e-icon-table2"></i></div>
-                            <div class="w-e-menu" data-title="¥˙¬Î"><i class="w-e-icon-terminal"></i></div>
-                            <div class="w-e-menu" data-title="∑÷∏Óœﬂ"><i class="w-e-icon-split-line"></i></div>
-                            <div class="w-e-menu" data-title="≥∑œ˙">
+                            <div class="w-e-menu" data-title="Ë°®Ê†º"><i class="w-e-icon-table2"></i></div>
+                            <div class="w-e-menu" data-title="‰ª£Á†Å"><i class="w-e-icon-terminal"></i></div>
+                            <div class="w-e-menu" data-title="ÂàÜÂâ≤Á∫ø"><i class="w-e-icon-split-line"></i></div>
+                            <div class="w-e-menu" data-title="Êí§ÈîÄ">
                                 <i class="w-e-icon-undo"></i>
                             </div>
-                            <div class="w-e-menu" data-title="ª÷∏¥">
+                            <div class="w-e-menu" data-title="ÊÅ¢Â§ç">
                                 <i class="w-e-icon-redo"></i>
                             </div>
                             <div class="w-e-menu-tooltip w-e-menu-tooltip-up"
@@ -983,7 +991,7 @@
                                     <div></div>
                                 </div>
                             </div>
-                            <div class="w-e-menu" data-title="»´∆¡">
+                            <div class="w-e-menu" data-title="ÂÖ®Â±è">
                                 <i class="w-e-icon-fullscreen"></i>
                             </div>
                         </div>
@@ -993,7 +1001,7 @@
                                  id="text-elem41734206260716245">
                                 <p><br></p>
                             </div>
-                            <div class="placeholder">«Î ‰»Î’˝Œƒ</div>
+                            <div class="placeholder">ËØ∑ËæìÂÖ•Ê≠£Êñá</div>
                             <div class="w-e-img-drag-mask" style="display:none;">
                                 <div class="w-e-img-drag-show-size"></div>
                                 <div class="w-e-img-drag-rb"></div>
@@ -1007,7 +1015,7 @@
                         <div class="col-md-5">
                             <div class="input-group mb-3 mt-3 ml-0">
                                 <div class="input-group-prepend">
-                                    <span class="input-group-text" id="inputGroup-sizing-default">÷™ ∂µ„∑÷¿‡</span>
+                                    <span class="input-group-text" id="inputGroup-sizing-default">Áü•ËØÜÁÇπÂàÜÁ±ª</span>
                                 </div>
                                 <input id="categoryInput" type="text" class="form-control">
                             </div>
@@ -1019,10 +1027,10 @@
 
                         <div class="col-md-1"></div>
                         <div class="col-md-2 ml-0">
-                            <button type="button" class="btn btn-primary" id="publishBtn">∑¢≤º</button>
+                            <button type="button" class="btn btn-primary" id="publishBtn">ÂèëÂ∏É</button>
                         </div>
                         <div class="col-md-4">
-                            <button type="button" class="btn btn-light">∑µªÿ</button>
+                            <button type="button" class="btn btn-light">ËøîÂõû</button>
                         </div>
                     </div>
 
