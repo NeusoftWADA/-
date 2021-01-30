@@ -1015,8 +1015,7 @@
                             <div style="border:1px solid #c9d8db; border-top:none; height:300px; z-index:10000;"
                                  class="w-e-text-container">
                             <textarea contenteditable="true" style="width:100%; height:100%;" class="w-e-text"
-                                      id="text-elem41734206260716245" placeholder="请输入正文" name="content">
-                            </textarea>
+                                      id="text-elem41734206260716245" placeholder="请输入正文" name="content"></textarea>
                                 <div class="w-e-img-drag-mask" style="display:none;">
                                     <div class="w-e-img-drag-show-size"></div>
                                     <div class="w-e-img-drag-rb"></div>
