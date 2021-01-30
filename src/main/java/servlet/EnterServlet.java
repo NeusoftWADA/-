@@ -32,20 +32,6 @@ public class EnterServlet {
         PrintWriter printWriter = response.getWriter();
 
 
-        try {
-
-            EnterHandler enterHandler = new EnterHandler();
-
-            if ( Knowledgedata == null ) {
-
-            }
-            else {
-
-            }
-
-        } catch (ClassNotFoundException | SQLException | ServletException e) {
-
-        }
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
