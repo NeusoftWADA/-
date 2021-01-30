@@ -11,8 +11,4 @@ public class Database {
                 "myk1", "myk1");
     }
 
-    public void testConnection() {
-        System.out.println(this.connection);
-    }
-
 }

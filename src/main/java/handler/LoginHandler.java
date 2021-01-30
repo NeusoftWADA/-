@@ -9,7 +9,7 @@ public class LoginHandler {
     Database database = new Database();
     Connection connection = null;
 
-    public LoginHandler() throws ClassNotFoundException, SQLException {
+    public LoginHandler() throws SQLException, ClassNotFoundException {
         connection = database.getConnection();
     }
 
