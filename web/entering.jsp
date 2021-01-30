@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 pageEncoding="UTF-8"%>
+
 <html lang="en">
 
 <head>
@@ -838,7 +839,7 @@ pageEncoding="UTF-8"%>
     </style>
 
 </head>
-
+<form action="EnterServlet" method="post">
 <body style="background-color: whitesmoke">
 
 <%
@@ -914,7 +915,7 @@ pageEncoding="UTF-8"%>
                                     <span class="input-group-text">标题</span>
                                 </div>
                                 <input id="titleInput" type="text" class="form-control" placeholder="不多于20字"
-                                       style="margin-right: 5px">
+                                       style="margin-right: 5px" name="title">
                             </div>
 
                         </div>
@@ -1017,7 +1018,7 @@ pageEncoding="UTF-8"%>
                                 <div class="input-group-prepend">
                                     <span class="input-group-text" id="inputGroup-sizing-default">知识点分类</span>
                                 </div>
-                                <input id="categoryInput" type="text" class="form-control">
+                                <input id="categoryInput" type="text" class="form-control" name="category">
                             </div>
                         </div>
                     </div>
@@ -1083,5 +1084,5 @@ pageEncoding="UTF-8"%>
     }
     // ]]>
 </script></body>
-
+</form>
 </html>
