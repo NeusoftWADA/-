@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>发布文章</title>
+
+    <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://cdn.staticfile.org/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdn.staticfile.org/popper.js/1.15.0/umd/popper.min.js"></script>
+    <script src="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+    <script src="wangEditor.min.js"></script>
+
+    <style>
+        .mainHeader{
+
+            padding-top: 1px;
+            padding-bottom: 1px;
+            background-color: white !important;
+            border-bottom: 5px solid #0b6cb8;
+        }
+
+        .toolbar {
+            border: 1px solid #ccc;
+        }
+        .text {
+            border: 1px solid #ccc;
+            height: 500px;
+        }
+    </style>
+
+    <script>
+        $(function () {
+            var E = window.wangEditor;
+            var editor = new E('#div1', '#div2');
+
+            editor.customConfig.uploadImgShowBase64 = true;
+            editor.create();
+
+            String.prototype.replaceAll = function (FindText, RepText) {
+                return this.replace(new RegExp(FindText, "g"), RepText);
+            };
+
+            $("#publishBtn").click(function () {
+                console.info("click");
+                var postData={};
+                postData.title=$("#titleInput").val();
+                postData.category=$("#categoryInput").val();
+
+                var content=editor.txt.html().replaceAll("\"","\'\'");
+                postData.content=content;
+
+                console.info(content);
+                postData.author_acc="123";
+                postData.author_name="admin";
+                postData.create_time=new Date().toLocaleDateString();
+                postData.last_edit_time=new Date().toLocaleDateString();
+                console.info(postData);
+                $.post("http://localhost:8099/publishArticle",postData,function (data) {
+
+                    alert(data);
+                })
+
+            })
+
+        })
+
+    </script>
+
+</head>
+<body style="background-color: whitesmoke">
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-12" style="padding: 0">
+            <nav class="navbar navbar-expand-lg navbar-light bg-light mainHeader">
+
+                <div class="collapse navbar-collapse" id="navbarText">
+
+                    <ul class="navbar-nav mr-auto"></ul>
+
+                    <span class="navbar-nav">
+                        <a class="nav-link navbar-item active" href="#">个人中心</a>
+
+                    </span>
+                </div>
+            </nav>
+
+        </div>
+
+    </div>
+
+    <div class="row" style="min-height: 10px"></div>
+
+    <div class="row">
+        <div class="col-md-1">
+
+
+        </div>
+
+        <div class="col-md-2" style="padding-right: 0px">
+
+            <div class="row">
+
+                <div class="col-md-3"></div>
+
+                <div class="col-md-9">
+                    <div class="card">
+
+                        <ul class="nav nav-pills nav-fill flex-column">
+                            <li class="nav-item">
+                                <a class="nav-link active list-group-item" href="#">发布文章</a>
+                            </li>
+                        </ul>
+                    </div>
+
+
+                </div>
+            </div>
+
+
+        </div>
+
+        <div class="col-md-6" style="padding-left: 0px">
+            <div class="card">
+                <div class="card-header" style="background-color: white">
+                    <div class="row">
+                        <div class="col-md-3" style="font-size: 18px">发布知识点</div>
+                    </div>
+                </div>
+
+                <div class="card-body" style="min-height: 1000px">
+
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="input-group mb-1 mt-2 ml-0 mr-1" >
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text"  >标题</span>
+                                </div>
+                                <input id="titleInput" type="text" class="form-control" placeholder="不多于20字" style="margin-right: 5px">
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <div style="padding: 8px 0; color: #ccc"></div>
+
+                    <div id="editor"></div>
+                    <script type="text/javascript" src="/wangEditor.min.js"></script>
+                    <script type="text/javascript">
+                        var E = window.wangEditor
+                        var editor = new E('#editor')
+                        editor.create()
+                    </script>
+
+                    <div class="row">
+
+                        <div class="col-md-5">
+                            <div class="input-group mb-3 mt-3 ml-0" >
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text" id="inputGroup-sizing-default">知识点分类</span>
+                                </div>
+                                <input id="categoryInput" type="text" class="form-control" >
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="row" style="padding: 15px">
+
+                        <div class="col-md-1"></div>
+                        <div class="col-md-2 ml-0">
+                            <button type="button" class="btn btn-primary" id="publishBtn">发布</button>
+                        </div>
+                        <div class="col-md-4">
+                            <button type="button" class="btn btn-light">返回</button>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+
+        <div class="col-md-2">
+        </div>
+    </div>
+
+</div>
+
+</body>
+</html>
+
