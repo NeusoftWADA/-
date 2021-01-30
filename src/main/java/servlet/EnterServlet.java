@@ -73,8 +73,8 @@ public class EnterServlet extends HttpServlet {
         //封装设置分类表
         int kid = 0;
         int cid = 0;
+        //封装分类表
         Set_categories set_categories = new Set_categories(kid, cid);
-
         /**
          * 更新设置分类表
          */
