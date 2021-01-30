@@ -57,7 +57,6 @@
                 postData.last_edit_time=new Date().toLocaleDateString();
                 console.info(postData);
                 $.post("http://localhost:8099/publishArticle",postData,function (data) {
-
                     alert(data);
                 })
 
