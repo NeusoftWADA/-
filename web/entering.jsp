@@ -836,6 +836,9 @@
             border: 1px solid #ccc;
             height: 500px;
         }
+        #avatar {
+            border-radius: 100%;
+        }
     </style>
 
 </head>
@@ -856,8 +859,11 @@
 
                     <ul class="navbar-nav mr-auto"></ul>
 
+                    <div class="avatar">
+                        <img src="<%=user_session.getAvatar()%>" alt="" height="40px" width="40px" id="avatar">
+                    </div>
                     <span class="navbar-nav">
-                            <a class="nav-link navbar-item active" href="#">
+                            <a class="nav-link navbar-item active">
                                 您好, <%=user_session.getName()%> 欢迎访问~
                             </a>
                         </span>
