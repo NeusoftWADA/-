@@ -1,5 +1,6 @@
+<%@ page import="entity.Userdata" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-pageEncoding="UTF-8"%>
+         pageEncoding="UTF-8"%>
 <html lang="en">
 
 <head>
@@ -842,7 +843,8 @@ pageEncoding="UTF-8"%>
 <body style="background-color: whitesmoke">
 
 <%
-    String username=session.getAttribute("user_session").toString();  //获取保存在session范围内的用户名
+    HttpSession httpSession = request.getSession();
+    Userdata user_session = (Userdata) httpSession.getAttribute("user_session");
 %>
 
 <div class="container-fluid">
@@ -856,7 +858,7 @@ pageEncoding="UTF-8"%>
 
                     <span class="navbar-nav">
                             <a class="nav-link navbar-item active" href="#">
-                                您好, <%=username%> 欢迎访问~
+                                您好, <%=user_session.getName()%> 欢迎访问~
                             </a>
                         </span>
                 </div>
