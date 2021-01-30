@@ -3,6 +3,7 @@ package servlet;
 import entity.Userdata;
 import handler.LoginHandler;
 
+import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -42,17 +43,20 @@ public class LoginServlet extends HttpServlet {
             else {
                 //登录成功，存入session
                 request.getSession().setAttribute("user_session", userdata);
-                printWriter.write("欢迎你, " + userdata.getUserName() + "!");
+
+//                printWriter.write("欢迎你, " + userdata.getUserName() + "!");
 
                 //通过用户email更新当前登录ip
                 String log_ip = request.getRemoteAddr();
                 String email = userdata.getEmail();
                 loginHandler.updateLoginIP(log_ip, email);
-
+                //转向知识点录入
+//                request.setCharacterEncoding("GBK");
+                request.getRequestDispatcher("entering.html").forward(request, response);
             }
             loginHandler.closeConnection();
 
-        } catch (ClassNotFoundException | SQLException e) {
+        } catch (ClassNotFoundException | SQLException | ServletException e) {
             e.printStackTrace();
             printWriter.write("登陆失败");
         }
