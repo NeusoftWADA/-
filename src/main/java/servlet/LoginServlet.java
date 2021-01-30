@@ -12,6 +12,7 @@ import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.SQLException;
+import java.util.Enumeration;
 
 
 @WebServlet("/LoginServlet")
@@ -49,7 +50,8 @@ public class LoginServlet extends HttpServlet {
                 loginHandler.updateLoginIP(log_ip, email);
 
                 //登录成功，存入session
-                request.getSession().setAttribute("user_session", userdata.getName());
+                request.getSession().setAttribute("user_session", userdata);
+
                 //转向知识点录入
                 request.getRequestDispatcher("entering.jsp").forward(request, response);
 

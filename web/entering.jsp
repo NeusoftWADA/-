@@ -1,6 +1,6 @@
+<%@ page import="entity.Userdata" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-pageEncoding="UTF-8"%>
-
+         pageEncoding="UTF-8"%>
 <html lang="en">
 
 <head>
@@ -836,14 +836,18 @@ pageEncoding="UTF-8"%>
             border: 1px solid #ccc;
             height: 500px;
         }
+        #avatar {
+            border-radius: 100%;
+        }
     </style>
 
 </head>
-<form action="EnterServlet" method="post">
+
 <body style="background-color: whitesmoke">
 
 <%
-    String username=session.getAttribute("user_session").toString();  //获取保存在session范围内的用户名
+    HttpSession httpSession = request.getSession();
+    Userdata user_session = (Userdata) httpSession.getAttribute("user_session");
 %>
 
 <div class="container-fluid">
@@ -855,9 +859,12 @@ pageEncoding="UTF-8"%>
 
                     <ul class="navbar-nav mr-auto"></ul>
 
+                    <div class="avatar">
+                        <img src="<%=user_session.getAvatar()%>" alt="" height="40px" width="40px" id="avatar">
+                    </div>
                     <span class="navbar-nav">
-                            <a class="nav-link navbar-item active" href="#">
-                                您好, <%=username%> 欢迎访问~
+                            <a class="nav-link navbar-item active">
+                                您好, <%=user_session.getName()%> 欢迎访问~
                             </a>
                         </span>
                 </div>
@@ -915,7 +922,7 @@ pageEncoding="UTF-8"%>
                                     <span class="input-group-text">标题</span>
                                 </div>
                                 <input id="titleInput" type="text" class="form-control" placeholder="不多于20字"
-                                       style="margin-right: 5px" name="title">
+                                       style="margin-right: 5px">
                             </div>
 
                         </div>
@@ -1018,7 +1025,7 @@ pageEncoding="UTF-8"%>
                                 <div class="input-group-prepend">
                                     <span class="input-group-text" id="inputGroup-sizing-default">知识点分类</span>
                                 </div>
-                                <input id="categoryInput" type="text" class="form-control" name="category">
+                                <input id="categoryInput" type="text" class="form-control">
                             </div>
                         </div>
                     </div>
@@ -1084,5 +1091,5 @@ pageEncoding="UTF-8"%>
     }
     // ]]>
 </script></body>
-</form>
+
 </html>
