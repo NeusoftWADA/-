@@ -938,7 +938,7 @@
                                     <div class="input-group-prepend">
                                         <span class="input-group-text">分类</span>
                                     </div>
-                                    <input id="categoriesInput" type="text" class="form-control" placeholder="请设置至少一个分类，如果多个，请使用英文都好分隔"
+                                    <input id="categoriesInput" type="text" class="form-control" placeholder="请设置至少一个分类，如果多个，请使用英文逗号分隔"
                                            style="margin-right: 5px" name="category">
                                 </div>
 
