@@ -2,10 +2,12 @@ package servlet;
 
 import entity.Knowledgedata;
 import entity.Set_categories;
+import entity.Sharedata;
 import entity.Userdata;
 import handler.CategoryHandler;
 import handler.EnterHandler;
 import handler.Set_categoriesHandler;
+import handler.ShareHandler;
 
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -37,6 +39,9 @@ public class EnterServlet extends HttpServlet {
         knowledgedata.setContent(content);
 
 
+        int kid = 0;
+        int cid = 0;
+        int uid = 0;
         /**
          * 更新分类表
          * TODO
@@ -44,7 +49,7 @@ public class EnterServlet extends HttpServlet {
          */
         try {
             CategoryHandler categoryHandler = new CategoryHandler();
-            categoryHandler.addCategory(category);
+            cid = categoryHandler.addCategory(category);
             categoryHandler.closeConnection();
             System.out.println("分类添加成功");
         } catch (ClassNotFoundException | SQLException e) {
@@ -61,20 +66,28 @@ public class EnterServlet extends HttpServlet {
         PrintWriter printWriter = response.getWriter();
         HttpSession httpSession = request.getSession();
         Userdata user_session = (Userdata) httpSession.getAttribute("user_session");
+        uid = user_session.getId();
         try {
             EnterHandler enterHandler = new EnterHandler();
-            enterHandler.addKnowledge(user_session, knowledgedata);
+            kid = enterHandler.addKnowledge(user_session, knowledgedata);
             printWriter.write("发布成功");
             enterHandler.closeConnection();
         } catch (SQLException | ClassNotFoundException e) {
             e.printStackTrace();
         }
 
-        //封装设置分类表
-        int kid = 0;
-        int cid = 0;
+
         //封装分类表
-        Set_categories set_categories = new Set_categories(kid, cid);
+        Set_categories set_categories = null;
+        Sharedata sharedata = null;
+        if(kid==0||cid==0||uid==0){
+            printWriter.println("----文件缺失！");
+        }
+        else{
+            set_categories = new Set_categories(kid, cid);
+            sharedata = new Sharedata(uid, kid);
+        }
+
         /**
          * 更新设置分类表
          */
@@ -84,7 +97,15 @@ public class EnterServlet extends HttpServlet {
         } catch (ClassNotFoundException | SQLException e) {
             e.printStackTrace();
         }
-
+        /**
+         * 更新设置分享表
+         */
+        try {
+            ShareHandler shareHandler = new ShareHandler();
+            shareHandler.setShare(sharedata);
+        } catch (ClassNotFoundException | SQLException e) {
+            e.printStackTrace();
+        }
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {

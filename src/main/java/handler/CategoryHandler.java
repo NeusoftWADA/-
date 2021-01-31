@@ -4,6 +4,7 @@ import database.Database;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public class CategoryHandler {
@@ -18,9 +19,18 @@ public class CategoryHandler {
         connection.close();
     }
 
-    public void addCategory(String name) throws SQLException {
-        PreparedStatement preparedStatement = connection.prepareStatement("insert into categories(name) value(?)");
+    public int addCategory(String name) throws SQLException {
+        //防止标签重复
+        PreparedStatement preparedStatement = connection.prepareStatement("insert into categories(name) select ? from dual where not exists(select name from categories where name = ?)");
         preparedStatement.setString(1, name);
+        preparedStatement.setString(2, name);
         preparedStatement.executeUpdate();
+        preparedStatement = connection.prepareStatement("select categories_id from categories where name = ?");
+        preparedStatement.setString(1,name);
+        ResultSet resultSet = preparedStatement.executeQuery();
+        if (resultSet.next()){
+            return resultSet.getInt(1);
+        }
+        return 0;
     }
 }

@@ -20,12 +20,19 @@ public class EnterHandler {
         connection.close();
     }
 
-    public void addKnowledge(Userdata userdata, Knowledgedata knowledgedata) throws SQLException{
+    public int addKnowledge(Userdata userdata, Knowledgedata knowledgedata) throws SQLException{
         PreparedStatement preparedStatement = connection.prepareStatement("insert into knowledge(user_id,title,abstract,content) values(?, ?, ?, ?)");
         preparedStatement.setInt(1,userdata.getId());
         preparedStatement.setString(2,knowledgedata.getTitle());
         preparedStatement.setString(3,knowledgedata.getAbstract());
         preparedStatement.setString(4,knowledgedata.getContent());
         preparedStatement.executeUpdate();
+        preparedStatement = connection.prepareStatement("select max(k_id) from knowledge where user_id = ?");
+        preparedStatement.setInt(1,userdata.getId());
+        ResultSet resultSet = preparedStatement.executeQuery();
+        if (resultSet.next()){
+            return resultSet.getInt(1);
+        }
+        return 0;
     }
 }

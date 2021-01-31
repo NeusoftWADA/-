@@ -19,6 +19,6 @@ public class Set_categoriesHandler {
         PreparedStatement preparedStatement = connection.prepareStatement("insert into set_categories(k_id, categories_id) values(?, ?)");
         preparedStatement.setInt(1, set_categories.getK_id());
         preparedStatement.setInt(2, set_categories.getCategories_id());
-
+        preparedStatement.executeUpdate();
     }
 }
