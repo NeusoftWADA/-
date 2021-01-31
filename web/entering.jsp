@@ -934,6 +934,14 @@
                                            style="margin-right: 5px" name="Abstract">
                                 </div>
 
+                                <div class="input-group mb-1 mt-2 ml-0 mr-1">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text">分类</span>
+                                    </div>
+                                    <input id="categoriesInput" type="text" class="form-control" placeholder="请设置至少一个分类，如果多个，请使用英文都好分隔"
+                                           style="margin-right: 5px" name="category">
+                                </div>
+
                             </div>
 
                         </div>
@@ -1024,17 +1032,17 @@
                         </div>
 
 
-                        <div class="row">
+<%--                        <div class="row">--%>
 
-                            <div class="col-md-5">
-                                <div class="input-group mb-3 mt-3 ml-0">
-                                    <div class="input-group-prepend">
-                                        <span class="input-group-text" id="inputGroup-sizing-default">知识点分类</span>
-                                    </div>
-                                    <input id="categoryInput" type="text" class="form-control" name="category">
-                                </div>
-                            </div>
-                        </div>
+<%--                            <div class="col-md-5">--%>
+<%--                                <div class="input-group mb-3 mt-3 ml-0">--%>
+<%--                                    <div class="input-group-prepend">--%>
+<%--                                        <span class="input-group-text" id="inputGroup-sizing-default">知识点分类</span>--%>
+<%--                                    </div>--%>
+<%--                                    <input style="width: 100%" id="categoryInput" type="text" class="form-control" name="category" placeholder="请至少添加一个类别名，如果有个，请用英文逗号分隔">--%>
+<%--                                </div>--%>
+<%--                            </div>--%>
+<%--                        </div>--%>
 
                         <div class="row" style="padding: 15px">
 

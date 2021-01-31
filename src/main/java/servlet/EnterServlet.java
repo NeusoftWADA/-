@@ -41,15 +41,20 @@ public class EnterServlet extends HttpServlet {
 
         int kid = 0;
         int cid = 0;
-        int uid = 0;
+//        int uid = 0;
         /**
          * 更新分类表
          * TODO
          * 更新后需返回一个当前分类的id
          */
+        String cate[] = category.split(",");
         try {
             CategoryHandler categoryHandler = new CategoryHandler();
-            cid = categoryHandler.addCategory(category);
+
+            for ( String s : cate ) {
+                cid = categoryHandler.addCategory(s);
+            }
+
             categoryHandler.closeConnection();
             System.out.println("分类添加成功");
         } catch (ClassNotFoundException | SQLException e) {
@@ -60,13 +65,13 @@ public class EnterServlet extends HttpServlet {
 
         /**
          * 更新知识点表
-         * TODO
          * 更新以后需返回一个当前知识点的id
          */
         PrintWriter printWriter = response.getWriter();
         HttpSession httpSession = request.getSession();
+        //获取登录用户session
         Userdata user_session = (Userdata) httpSession.getAttribute("user_session");
-        uid = user_session.getId();
+//        uid = user_session.getId();
         try {
             EnterHandler enterHandler = new EnterHandler();
             kid = enterHandler.addKnowledge(user_session, knowledgedata);
@@ -77,15 +82,17 @@ public class EnterServlet extends HttpServlet {
         }
 
 
+//        Sharedata sharedata = null;
+//        sharedata = new Sharedata(uid, kid);
+
+
         //封装分类表
         Set_categories set_categories = null;
-        Sharedata sharedata = null;
-        if(kid==0||cid==0||uid==0){
+        if ( kid == 0 || cid == 0 ) {
             printWriter.println("----文件缺失！");
         }
-        else{
+        else {
             set_categories = new Set_categories(kid, cid);
-            sharedata = new Sharedata(uid, kid);
         }
 
         /**
@@ -97,15 +104,16 @@ public class EnterServlet extends HttpServlet {
         } catch (ClassNotFoundException | SQLException e) {
             e.printStackTrace();
         }
+
         /**
          * 更新设置分享表
          */
-        try {
-            ShareHandler shareHandler = new ShareHandler();
-            shareHandler.setShare(sharedata);
-        } catch (ClassNotFoundException | SQLException e) {
-            e.printStackTrace();
-        }
+//        try {
+//            ShareHandler shareHandler = new ShareHandler();
+//            shareHandler.setShare(sharedata);
+//        } catch (ClassNotFoundException | SQLException e) {
+//            e.printStackTrace();
+//        }
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
