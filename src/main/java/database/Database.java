@@ -9,6 +9,8 @@ public class Database {
         Class.forName("com.mysql.jdbc.Driver");
         return this.connection = DriverManager.getConnection("jdbc:mysql://172.17.8.19:3306/myk1?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC",
                 "myk1", "myk1");
+//        return this.connection = DriverManager.getConnection("jdbc:mysql://qiuqian.xyz:3306/myk1?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC",
+//                "root", "root");
     }
 
 }
