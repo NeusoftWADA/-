@@ -46,8 +46,9 @@ public class EnterServlet extends HttpServlet {
          *      遍历 Vector<Integer> set_cate，使用cid和kid更新设置分类表
          */
         PrintWriter printWriter = response.getWriter();
-        HttpSession httpSession = request.getSession();
         //获取登录用户session
+        HttpSession httpSession = request.getSession();
+        //实例化session
         Userdata user_session = (Userdata) httpSession.getAttribute("user_session");
         //获取所有分类
         String cate[] = category.split(",");
