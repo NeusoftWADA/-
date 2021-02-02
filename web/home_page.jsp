@@ -191,16 +191,7 @@
                 <p class="picture"><img src="<%=user_session.getAvatar()%>" width="100" height="100" style="border-radius: 100%"></p>
                 <p class="name"><%=user_session.getName()%></p>
             </div>
-        </div>
 
-        <div class="col-sm-8">
-            <img src="./fengmian.jpg" style="width: 760px; height: 260px" />
-        </div>
-    </div>
-
-
-    <div class="row" style="margin-top: 15px">
-        <div class="col-sm-4">
             <table class="border_b2">
                 <tbody>
                 <tr class="title">
@@ -254,9 +245,12 @@
             </a>
         </div>
 
+        <div class="col-sm-8">
+            <img src="./fengmian.jpg" style="width: 760px; height: 260px" />
 
-        <div class="col-sm-4">
+            <div class="row" style="margin-top: 15px">
             <!--添加列表组件-->
+                <div class="col-sm-6">
             <div class="list-group">
                 <a href="#" class="list-group-item active disabled"
                    align="center">知识库人气榜</a>
@@ -267,9 +261,10 @@
                 <a href="#" class="list-group-item" align="center">新闻新闻新闻新闻新闻新闻</a>
                 <a href="#" class="list-group-item" align="center">新闻新闻新闻新闻新闻新闻</a>
             </div>
-        </div>
+                </div>
 
-        <div class="col-sm-4">
+
+                <div class="col-sm-6">
             <!--添加列表组件-->
             <div class="list-group">
                 <a href="#" class="list-group-item active disabled"
@@ -281,6 +276,8 @@
                 <a href="#" class="list-group-item" align="center">我赞我赞我赞我赞我赞我赞</a>
                 <a href="#" class="list-group-item" align="center">我赞我赞我赞我赞我赞我赞</a>
             </div>
+                </div>
+        </div>
         </div>
 
         <!-- 添加分页效果 -->
