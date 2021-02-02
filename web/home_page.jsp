@@ -147,10 +147,9 @@
                        role="button" aria-expanded="false">用户<span
                             class="caret"></span></a>
                     <ul class="dropdown-menu" role="menu">
-                        <li><a
-                                href="http://localhost:63342/KnowledgeBase/myk1/web/log.html?_ijt=cep164d2hrj9srgkhn2irb71u0">登录</a>
-                        </li>
-                        <li><a href="#">注册</a></li>
+                        <li><a href="log.html">登录</a></li>
+                        <li><a href="reg.html">注册</a></li>
+<%--                        <li><a href="reg.html">注销</a></li>--%>
                     </ul>
                 </li>
 
@@ -248,20 +247,6 @@
                     <td class="limit1"><span class="y_black"><%=user_session.getEmail()%></span>
                     </td>
 
-
-                    <%-- <tr class="per_list">--%>
-                    <%-- <td><span>专业：</span></td>--%>
-                    <%-- <td class="limit1"><span
-                            class="y_black">软件工程</span></td>--%>
-                    <%-- </tr>--%>
-
-                    <%-- <tr class="per_list">--%>
-                    <%-- <td class="dir"><span>学校：</span></td>
-                        --%>
-                    <%-- <td class="limit1"><a
-                            class="y_black">大连东软信息学院</a>
-                        </td>--%>
-                    <%-- </tr>--%>
                 </tbody>
             </table>
             <a href="entering.jsp">
