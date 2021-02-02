@@ -186,7 +186,7 @@
 <div class="container" style="margin-top: -15px">
     <!--添加一行占用12列，添加img-->
     <div class="row">
-        <div class="col-sm-4">
+        <div class="col-sm-3">
             <div class="top">
                 <p class="picture"><img src="<%=user_session.getAvatar()%>" width="100" height="100" style="border-radius: 100%"></p>
                 <p class="name"><%=user_session.getName()%></p>
@@ -245,8 +245,8 @@
             </a>
         </div>
 
-        <div class="col-sm-8">
-            <img src="./fengmian.jpg" style="width: 760px; height: 260px" />
+        <div class="col-sm-9">
+            <img src="./fengmian.jpg" style="width: 850px; height: 260px" />
 
             <div class="row" style="margin-top: 15px">
             <!--添加列表组件-->
@@ -301,6 +301,9 @@
             </ul>
         </nav>
 
+        <div class="copyright text-center">
+            <p>copyright 我的知识库</p>
+        </div>
     </div>
 </div>
 
