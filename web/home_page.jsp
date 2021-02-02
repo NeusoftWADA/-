@@ -302,7 +302,7 @@
         </nav>
 
         <div class="copyright text-center">
-            <p>copyright 我的知识库</p>
+            <p>我的知识库</p>
         </div>
     </div>
 </div>
