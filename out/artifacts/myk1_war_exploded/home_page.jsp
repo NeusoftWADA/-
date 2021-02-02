@@ -64,6 +64,32 @@
         .limit1 {
             width: 180px
         }
+
+        #profile {
+            border: 1px solid black;
+            border-radius: 20px;
+            height: 80%;
+            background-color: #eee;
+        }
+
+        .lgi {
+            height: 100px;
+        }
+
+        .info {
+            color: #565a5f;
+            font: 16px "open sans", "Helvetica Neue", "Microsoft Yahei", Helvetica, Arial, sans-serif;
+            margin: 0;
+            border: 0;
+            outline: 0;
+            font-weight: inherit;
+            font-style: inherit;
+            font-family: inherit;
+            font-size: 100%;
+            vertical-align: baseline;
+            border-bottom: 1px solid #eceff2;
+            padding: 0px;
+        }
     </style>
 
     <meta http-equiv="Content-Type" content="text/html" ; charset="utf-8" />
@@ -85,7 +111,7 @@
 
 </head>
 
-<body>
+<body style="background-color: #fff;">
 
 <% HttpSession httpSession=request.getSession(); Userdata user_session=(Userdata)
         httpSession.getAttribute("user_session"); %>
@@ -186,10 +212,22 @@
 <div class="container" style="margin-top: -15px">
     <!--添加一行占用12列，添加img-->
     <div class="row">
-        <div class="col-sm-3">
+
+        <div class="col-sm-3" id="profile">
             <div class="top">
                 <p class="picture"><img src="<%=user_session.getAvatar()%>" width="100" height="100" style="border-radius: 100%"></p>
                 <p class="name"><%=user_session.getName()%></p>
+            </div>
+
+            <div class="info">
+                <div class="article-info-block">
+                    79
+                    <span>文章</span>
+                </div>
+                <div class="article-info-block">
+                    59
+                    <span>标签</span>
+                </div>
             </div>
 
             <table class="border_b2">
@@ -210,22 +248,21 @@
                 </tbody>
             </table>
 
-
+            <%
+                int user_id=user_session.getId();
+                int cnt=0; Database database=new Database();
+                PreparedStatement preparedStatement=database.getConnection().prepareStatement("select COUNT(k_id) from knowledge where user_id=?");
+                preparedStatement.setInt(1, user_id);
+                ResultSet resultSet=preparedStatement.executeQuery();
+                while(resultSet.next() ) {
+                    cnt=resultSet.getInt(1);
+                }
+            %>
             <table class="mes_l">
                 <tbody>
                 <tr class="per_list">
-                    <td class="dir"><span>知识点数量：</span></td>
-                    <%
-                        int user_id=user_session.getId();
-                        int cnt=0; Database database=new Database();
-                        PreparedStatement preparedStatement=database.getConnection().prepareStatement("select COUNT(k_id) from knowledge where user_id=?");
-                        preparedStatement.setInt(1, user_id);
-                        ResultSet resultSet=preparedStatement.executeQuery();
-                        while(resultSet.next() ) {
-                            cnt=resultSet.getInt(1);
-                        }
-                    %>
-                    <td class="limit2"><span class="y_black"><%=cnt%></span>
+                    <td class="dir"><span>知识量：</span></td>
+                    <td class="limit1"><span class="y_black"><%=cnt%>篇</span>
                     </td>
                 </tr>
                 </tbody>
@@ -241,68 +278,68 @@
                 </tbody>
             </table>
             <a href="entering.jsp">
-                <button>发布知识点</button>
+                <button class="btn btn-primary btn-lg btn-block">发布知识点</button>
             </a>
         </div>
 
         <div class="col-sm-9">
-            <img src="./fengmian.jpg" style="width: 850px; height: 260px" />
+            <img src="https://picbedd.oss-cn-beijing.aliyuncs.com/fengmian.jpg" style="width: 850px; height: 120px" />
 
             <div class="row" style="margin-top: 15px">
             <!--添加列表组件-->
-                <div class="col-sm-6">
+                <div class="col-sm-12">
             <div class="list-group">
                 <a href="#" class="list-group-item active disabled"
                    align="center">知识库人气榜</a>
-                <a href="#" class="list-group-item" align="center">123</a>
-                <a href="#" class="list-group-item" align="center">我的新闻</a>
-                <a href="#" class="list-group-item" align="center">新闻新闻新闻新闻新闻新闻</a>
-                <a href="#" class="list-group-item" align="center">新闻新闻新闻新闻新闻新闻</a>
-                <a href="#" class="list-group-item" align="center">新闻新闻新闻新闻新闻新闻</a>
-                <a href="#" class="list-group-item" align="center">新闻新闻新闻新闻新闻新闻</a>
+                <a href="#" class="list-group-item lgi" align="center">123</a>
+                <a href="#" class="list-group-item lgi" align="center">我的新闻</a>
+                <a href="#" class="list-group-item lgi" align="center">新闻新闻新闻新闻新闻新闻</a>
+                <a href="#" class="list-group-item lgi" align="center">新闻新闻新闻新闻新闻新闻</a>
+                <a href="#" class="list-group-item lgi" align="center">新闻新闻新闻新闻新闻新闻</a>
+                <a href="#" class="list-group-item lgi" align="center">新闻新闻新闻新闻新闻新闻</a>
             </div>
                 </div>
 
 
-                <div class="col-sm-6">
+<%--                <div class="col-sm-6">--%>
             <!--添加列表组件-->
-            <div class="list-group">
-                <a href="#" class="list-group-item active disabled"
-                   align="center">知识库人气榜</a>
-                <a href="#" class="list-group-item" align="center">关注关注>关注关注>关注关注</a>
-                <a href="#" class="list-group-item" align="center">新闻新闻新闻新闻新闻新闻</a>
-                <a href="#" class="list-group-item" align="center">精华精华精华精华精华精华</a>
-                <a href="#" class="list-group-item" align="center">我评我评我评我评我评我评</a>
-                <a href="#" class="list-group-item" align="center">我赞我赞我赞我赞我赞我赞</a>
-                <a href="#" class="list-group-item" align="center">我赞我赞我赞我赞我赞我赞</a>
-            </div>
-                </div>
+<%--            <div class="list-group">--%>
+<%--                <a href="#" class="list-group-item active disabled"--%>
+<%--                   align="center">知识库人气榜</a>--%>
+<%--                <a href="#" class="list-group-item" align="center">关注关注>关注关注>关注关注</a>--%>
+<%--                <a href="#" class="list-group-item" align="center">新闻新闻新闻新闻新闻新闻</a>--%>
+<%--                <a href="#" class="list-group-item" align="center">精华精华精华精华精华精华</a>--%>
+<%--                <a href="#" class="list-group-item" align="center">我评我评我评我评我评我评</a>--%>
+<%--                <a href="#" class="list-group-item" align="center">我赞我赞我赞我赞我赞我赞</a>--%>
+<%--                <a href="#" class="list-group-item" align="center">我赞我赞我赞我赞我赞我赞</a>--%>
+<%--            </div>--%>
+<%--                </div>--%>
         </div>
         </div>
 
         <!-- 添加分页效果 -->
-        <nav>
-            <ul class="pagination">
-                <li>
-                    <a href="#" aria-label="Previous">
-                        <span aria-hidden="true">«</span>
-                    </a>
-                </li>
-                <li><a href="#">1</a></li>
-                <li><a href="#">2</a></li>
-                <li><a href="#">3</a></li>
-                <li><a href="#">4</a></li>
-                <li><a href="#">5</a></li>
-                <li>
-                    <a href="#" aria-label="Next">
-                        <span aria-hidden="true">»</span>
-                    </a>
-                </li>
-            </ul>
-        </nav>
+<%--        <nav>--%>
+<%--            <ul class="pagination" id="pagination">--%>
+<%--                <li>--%>
+<%--                    <a href="#" aria-label="Previous">--%>
+<%--                        <span aria-hidden="true">«</span>--%>
+<%--                    </a>--%>
+<%--                </li>--%>
+<%--                <li><a href="#">1</a></li>--%>
+<%--                <li><a href="#">2</a></li>--%>
+<%--                <li><a href="#">3</a></li>--%>
+<%--                <li><a href="#">4</a></li>--%>
+<%--                <li><a href="#">5</a></li>--%>
+<%--                <li>--%>
+<%--                    <a href="#" aria-label="Next">--%>
+<%--                        <span aria-hidden="true">»</span>--%>
+<%--                    </a>--%>
+<%--                </li>--%>
+<%--            </ul>--%>
+<%--        </nav>--%>
 
         <div class="copyright text-center">
-            <p>我的知识库</p>
+            <p>©我的知识库myk1</p>
         </div>
     </div>
 </div>
