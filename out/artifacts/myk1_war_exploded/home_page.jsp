@@ -210,7 +210,7 @@
 </div>
 </div> -->
 <div class="container" style="margin-top: -15px">
-    <!--添加一行占用12列，添加img-->
+
     <div class="row">
 
         <div class="col-sm-3" id="profile">
@@ -283,14 +283,13 @@
         </div>
 
         <div class="col-sm-9">
-            <img src="https://picbedd.oss-cn-beijing.aliyuncs.com/fengmian.jpg" style="width: 850px; height: 120px" />
+            <img src="https://picbedd.oss-cn-beijing.aliyuncs.com/fengmian.jpg" style="width: 850px; height: 150px" />
 
             <div class="row" style="margin-top: 15px">
             <!--添加列表组件-->
                 <div class="col-sm-12">
             <div class="list-group">
-                <a href="#" class="list-group-item active disabled"
-                   align="center">知识库人气榜</a>
+                <a class="list-group-item active" align="center">知识库人气榜</a>
                 <a href="#" class="list-group-item lgi" align="center">123</a>
                 <a href="#" class="list-group-item lgi" align="center">我的新闻</a>
                 <a href="#" class="list-group-item lgi" align="center">新闻新闻新闻新闻新闻新闻</a>
@@ -304,7 +303,7 @@
 <%--                <div class="col-sm-6">--%>
             <!--添加列表组件-->
 <%--            <div class="list-group">--%>
-<%--                <a href="#" class="list-group-item active disabled"--%>
+<%--                <a class="list-group-item active"--%>
 <%--                   align="center">知识库人气榜</a>--%>
 <%--                <a href="#" class="list-group-item" align="center">关注关注>关注关注>关注关注</a>--%>
 <%--                <a href="#" class="list-group-item" align="center">新闻新闻新闻新闻新闻新闻</a>--%>
