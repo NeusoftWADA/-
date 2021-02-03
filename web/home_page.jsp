@@ -289,8 +289,7 @@
             <!--添加列表组件-->
                 <div class="col-sm-12">
             <div class="list-group">
-                <a href="#" class="list-group-item active disabled"
-                   align="center">知识库人气榜</a>
+                <a class="list-group-item active" align="center">知识库人气榜</a>
                 <a href="#" class="list-group-item lgi" align="center">123</a>
                 <a href="#" class="list-group-item lgi" align="center">我的新闻</a>
                 <a href="#" class="list-group-item lgi" align="center">新闻新闻新闻新闻新闻新闻</a>
@@ -304,7 +303,7 @@
 <%--                <div class="col-sm-6">--%>
             <!--添加列表组件-->
 <%--            <div class="list-group">--%>
-<%--                <a href="#" class="list-group-item active disabled"--%>
+<%--                <a class="list-group-item active"--%>
 <%--                   align="center">知识库人气榜</a>--%>
 <%--                <a href="#" class="list-group-item" align="center">关注关注>关注关注>关注关注</a>--%>
 <%--                <a href="#" class="list-group-item" align="center">新闻新闻新闻新闻新闻新闻</a>--%>
