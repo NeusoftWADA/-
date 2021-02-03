@@ -2,6 +2,10 @@
 <%@ page import="database.Database" %>
 <%@ page import="java.sql.PreparedStatement" %>
 <%@ page import="java.sql.ResultSet" %>
+<%@ page import="javax.websocket.Session" %>
+<%@ page import="java.util.Collection" %>
+<%@ page import="java.util.ArrayList" %>
+<%@ page import="java.util.List" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%--<!DOCTYPE html>--%>
 <html lang="en">
@@ -76,20 +80,20 @@
             height: 100px;
         }
 
-        .info {
-            color: #565a5f;
-            font: 16px "open sans", "Helvetica Neue", "Microsoft Yahei", Helvetica, Arial, sans-serif;
-            margin: 0;
-            border: 0;
-            outline: 0;
-            font-weight: inherit;
-            font-style: inherit;
-            font-family: inherit;
-            font-size: 100%;
-            vertical-align: baseline;
-            border-bottom: 1px solid #eceff2;
-            padding: 0px;
-        }
+        /*.info {*/
+        /*    color: #565a5f;*/
+        /*    font: 16px "open sans", "Helvetica Neue", "Microsoft Yahei", Helvetica, Arial, sans-serif;*/
+        /*    margin: 0;*/
+        /*    border: 0;*/
+        /*    outline: 0;*/
+        /*    font-weight: inherit;*/
+        /*    font-style: inherit;*/
+        /*    font-family: inherit;*/
+        /*    font-size: 100%;*/
+        /*    vertical-align: baseline;*/
+        /*    border-bottom: 1px solid #eceff2;*/
+        /*    padding: 0px;*/
+        /*}*/
     </style>
 
     <meta http-equiv="Content-Type" content="text/html" ; charset="utf-8" />
@@ -257,7 +261,16 @@
                 while(resultSet.next() ) {
                     cnt=resultSet.getInt(1);
                 }
+                preparedStatement=database.getConnection().prepareStatement("select title from knowledge where user_id=?");
+                preparedStatement.setInt(1, user_id);
+                resultSet=preparedStatement.executeQuery();
+                int i=0;
+                while(resultSet.next()) {
+                    request.getSession().setAttribute("title"+i,resultSet.getString(1));
+                    i++;
+                }
             %>
+
             <table class="mes_l">
                 <tbody>
                 <tr class="per_list">
@@ -288,14 +301,14 @@
             <div class="row" style="margin-top: 15px">
             <!--添加列表组件-->
                 <div class="col-sm-12">
-            <div class="list-group">
-                <a class="list-group-item active" align="center">知识库人气榜</a>
-                <a href="#" class="list-group-item lgi" align="center">123</a>
-                <a href="#" class="list-group-item lgi" align="center">我的新闻</a>
-                <a href="#" class="list-group-item lgi" align="center">新闻新闻新闻新闻新闻新闻</a>
-                <a href="#" class="list-group-item lgi" align="center">新闻新闻新闻新闻新闻新闻</a>
-                <a href="#" class="list-group-item lgi" align="center">新闻新闻新闻新闻新闻新闻</a>
-                <a href="#" class="list-group-item lgi" align="center">新闻新闻新闻新闻新闻新闻</a>
+            <div class="list-group" id="title">
+                <a class="list-group-item active" align="center">我的知识库</a>
+<%--                <a href="#" class="list-group-item lgi" align="center">123</a>--%>
+<%--                <a href="#" class="list-group-item lgi" align="center">我的新闻</a>--%>
+<%--                <a href="#" class="list-group-item lgi" align="center">新闻新闻新闻新闻新闻新闻</a>--%>
+<%--                <a href="#" class="list-group-item lgi" align="center">新闻新闻新闻新闻新闻新闻</a>--%>
+<%--                <a href="#" class="list-group-item lgi" align="center">新闻新闻新闻新闻新闻新闻</a>--%>
+<%--                <a href="#" class="list-group-item lgi" align="center">新闻新闻新闻新闻新闻新闻</a>--%>
             </div>
                 </div>
 
@@ -345,10 +358,12 @@
 
 </div>
 
-
-
-
-
+<script>
+        var size = <%=i%>;
+        for(var i=0;i<size;i++){
+            $("#title").append('<a href="#" class="list-group-item" align="center title"><%=request.getSession().getAttribute("title"+i)%></a>');//此处的i有问题
+        }
+</script>
 </body>
 
 </html>
