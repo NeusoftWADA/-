@@ -303,12 +303,17 @@
                 <div class="col-sm-12">
             <div class="list-group" id="title">
                 <a class="list-group-item active" align="center">我的知识库</a>
-<%--                <a href="#" class="list-group-item lgi" align="center">123</a>--%>
-<%--                <a href="#" class="list-group-item lgi" align="center">我的新闻</a>--%>
-<%--                <a href="#" class="list-group-item lgi" align="center">新闻新闻新闻新闻新闻新闻</a>--%>
-<%--                <a href="#" class="list-group-item lgi" align="center">新闻新闻新闻新闻新闻新闻</a>--%>
-<%--                <a href="#" class="list-group-item lgi" align="center">新闻新闻新闻新闻新闻新闻</a>--%>
-<%--                <a href="#" class="list-group-item lgi" align="center">新闻新闻新闻新闻新闻新闻</a>--%>
+                <a href="#" class="list-group-item lgi" align="center"><%=request.getSession().getAttribute("title0")%></a>
+                <a href="#" class="list-group-item lgi" align="center"><%=request.getSession().getAttribute("title1")%></a>
+                <a href="#" class="list-group-item lgi" align="center"><%=request.getSession().getAttribute("title2")%></a>
+                <a href="#" class="list-group-item lgi" align="center"><%=request.getSession().getAttribute("title3")%></a>
+                <a href="#" class="list-group-item lgi" align="center"><%=request.getSession().getAttribute("title4")%></a>
+                <a href="#" class="list-group-item lgi" align="center"><%=request.getSession().getAttribute("title5")%></a>
+                <a href="#" class="list-group-item lgi" align="center"><%=request.getSession().getAttribute("title6")%></a>
+                <a href="#" class="list-group-item lgi" align="center"><%=request.getSession().getAttribute("title7")%></a>
+                <a href="#" class="list-group-item lgi" align="center"><%=request.getSession().getAttribute("title8")%></a>
+                <a href="#" class="list-group-item lgi" align="center"><%=request.getSession().getAttribute("title9")%></a>
+                <a href="#" class="list-group-item lgi" align="center">查看更多</a>
             </div>
                 </div>
 
@@ -359,10 +364,10 @@
 </div>
 
 <script>
-        var size = <%=i%>;
-        for(var i=0;i<size;i++){
-            $("#title").append('<a href="#" class="list-group-item" align="center title"><%=request.getSession().getAttribute("title"+i)%></a>');//此处的i有问题
-        }
+        <%--var size = <%=i%>;--%>
+        <%--for(var i=0;i<size;i++){--%>
+        <%--    $("#title").append('<a href="#" class="list-group-item" align="center title"><%=request.getSession().getAttribute("title"+i)%></a>');//此处的i有问题--%>
+        <%--}--%>
 </script>
 </body>
 
