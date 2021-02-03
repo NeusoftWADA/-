@@ -2,10 +2,8 @@
 <%@ page import="database.Database" %>
 <%@ page import="java.sql.PreparedStatement" %>
 <%@ page import="java.sql.ResultSet" %>
-<%@ page import="javax.websocket.Session" %>
-<%@ page import="java.util.Collection" %>
-<%@ page import="java.util.ArrayList" %>
-<%@ page import="java.util.List" %>
+<%@ page import="entity.Knowledgedata" %>
+<%@ page import="java.util.*" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%--<!DOCTYPE html>--%>
 <html lang="en">
@@ -223,17 +221,6 @@
                 <p class="name"><%=user_session.getName()%></p>
             </div>
 
-            <div class="info">
-                <div class="article-info-block">
-                    79
-                    <span>文章</span>
-                </div>
-                <div class="article-info-block">
-                    59
-                    <span>标签</span>
-                </div>
-            </div>
-
             <table class="border_b2">
                 <tbody>
                 <tr class="title">
@@ -261,14 +248,14 @@
                 while(resultSet.next() ) {
                     cnt=resultSet.getInt(1);
                 }
-                preparedStatement=database.getConnection().prepareStatement("select title from knowledge where user_id=?");
-                preparedStatement.setInt(1, user_id);
-                resultSet=preparedStatement.executeQuery();
-                int i=0;
-                while(resultSet.next()) {
-                    request.getSession().setAttribute("title"+i,resultSet.getString(1));
-                    i++;
-                }
+//                preparedStatement=database.getConnection().prepareStatement("select title from knowledge where user_id=?");
+//                preparedStatement.setInt(1, user_id);
+//                resultSet=preparedStatement.executeQuery();
+//                int i=0;
+//                while(resultSet.next()) {
+//                    request.getSession().setAttribute("title"+i,resultSet.getString(1));
+//                    i++;
+//                }
             %>
 
             <table class="mes_l">
@@ -302,35 +289,34 @@
             <!--添加列表组件-->
                 <div class="col-sm-12">
             <div class="list-group" id="title">
+
+                <%
+                    //按时间顺序封装取出十条知识点数据，放入集合
+                    String sql = "SELECT * FROM `knowledge` ORDER BY createTime DESC LIMIT 10";
+                    PreparedStatement preparedStatement1 = database.getConnection().prepareStatement(sql);
+                    ResultSet resultSet1 = preparedStatement1.executeQuery();
+                    List<Knowledgedata> knowledgedataList = new ArrayList<>();
+                    while ( resultSet1.next() ) {
+                        Knowledgedata knowledgedata = new Knowledgedata(resultSet1.getInt(1), resultSet1.getInt(2), resultSet1.getString(3), resultSet1.getString(4), resultSet1.getString(5), resultSet1.getTime(6));
+                        knowledgedataList.add(knowledgedata);
+                    }
+                %>
+
                 <a class="list-group-item active" align="center">我的知识库</a>
-                <a href="#" class="list-group-item lgi" align="center"><%=request.getSession().getAttribute("title0")%></a>
-                <a href="#" class="list-group-item lgi" align="center"><%=request.getSession().getAttribute("title1")%></a>
-                <a href="#" class="list-group-item lgi" align="center"><%=request.getSession().getAttribute("title2")%></a>
-                <a href="#" class="list-group-item lgi" align="center"><%=request.getSession().getAttribute("title3")%></a>
-                <a href="#" class="list-group-item lgi" align="center"><%=request.getSession().getAttribute("title4")%></a>
-                <a href="#" class="list-group-item lgi" align="center"><%=request.getSession().getAttribute("title5")%></a>
-                <a href="#" class="list-group-item lgi" align="center"><%=request.getSession().getAttribute("title6")%></a>
-                <a href="#" class="list-group-item lgi" align="center"><%=request.getSession().getAttribute("title7")%></a>
-                <a href="#" class="list-group-item lgi" align="center"><%=request.getSession().getAttribute("title8")%></a>
-                <a href="#" class="list-group-item lgi" align="center"><%=request.getSession().getAttribute("title9")%></a>
-                <a href="#" class="list-group-item lgi" align="center">查看更多</a>
+                <a href="#" class="list-group-item lgi" align="center"><%=knowledgedataList.get(0).getTitle()%></a>
+                <a href="#" class="list-group-item lgi" align="center"><%=knowledgedataList.get(1).getTitle()%></a>
+                <a href="#" class="list-group-item lgi" align="center"><%=knowledgedataList.get(2).getTitle()%></a>
+                <a href="#" class="list-group-item lgi" align="center"><%=knowledgedataList.get(3).getTitle()%></a>
+                <a href="#" class="list-group-item lgi" align="center"><%=knowledgedataList.get(4).getTitle()%></a>
+                <a href="#" class="list-group-item lgi" align="center"><%=knowledgedataList.get(5).getTitle()%></a>
+                <a href="#" class="list-group-item lgi" align="center"><%=knowledgedataList.get(6).getTitle()%></a>
+                <a href="#" class="list-group-item lgi" align="center"><%=knowledgedataList.get(7).getTitle()%></a>
+                <a href="#" class="list-group-item lgi" align="center"><%=knowledgedataList.get(8).getTitle()%></a>
+                <a href="#" class="list-group-item lgi" align="center"><%=knowledgedataList.get(9).getTitle()%></a>
+                <a href="#">查看更多</a>
             </div>
                 </div>
 
-
-<%--                <div class="col-sm-6">--%>
-            <!--添加列表组件-->
-<%--            <div class="list-group">--%>
-<%--                <a class="list-group-item active"--%>
-<%--                   align="center">知识库人气榜</a>--%>
-<%--                <a href="#" class="list-group-item" align="center">关注关注>关注关注>关注关注</a>--%>
-<%--                <a href="#" class="list-group-item" align="center">新闻新闻新闻新闻新闻新闻</a>--%>
-<%--                <a href="#" class="list-group-item" align="center">精华精华精华精华精华精华</a>--%>
-<%--                <a href="#" class="list-group-item" align="center">我评我评我评我评我评我评</a>--%>
-<%--                <a href="#" class="list-group-item" align="center">我赞我赞我赞我赞我赞我赞</a>--%>
-<%--                <a href="#" class="list-group-item" align="center">我赞我赞我赞我赞我赞我赞</a>--%>
-<%--            </div>--%>
-<%--                </div>--%>
         </div>
         </div>
 
