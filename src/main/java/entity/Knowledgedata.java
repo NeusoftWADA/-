@@ -8,9 +8,9 @@ public class Knowledgedata {
     private String title;
     private String Abstract;
     private String content;
-    private Date createTime;
+    private String createTime;
 
-    public Knowledgedata(int k_id,int user_id,String title,String Abstract,String content,Date createTime){
+    public Knowledgedata(int k_id,int user_id,String title,String Abstract,String content,String createTime){
         this.k_id=k_id;
         this.user_id=user_id;
         this.title=title;
@@ -61,11 +61,11 @@ public class Knowledgedata {
         this.content = content;
     }
 
-    public Date getCreateTime() {
+    public String getCreateTime() {
         return createTime;
     }
 
-    public void setCreateTime(Date createTime) {
+    public void setCreateTime(String createTime) {
         this.createTime = createTime;
     }
 }

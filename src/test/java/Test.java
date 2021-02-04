@@ -37,7 +37,7 @@ public class Test {
         ResultSet resultSet1 = preparedStatement1.executeQuery();
         List<Knowledgedata> knowledgedataList = new ArrayList<Knowledgedata>();
         while ( resultSet1.next() ) {
-            Knowledgedata knowledgedata = new Knowledgedata(resultSet1.getInt(1), resultSet1.getInt(2), resultSet1.getString(3), resultSet1.getString(4), resultSet1.getString(5), resultSet1.getTime(6));
+            Knowledgedata knowledgedata = new Knowledgedata(resultSet1.getInt(1), resultSet1.getInt(2), resultSet1.getString(3), resultSet1.getString(4), resultSet1.getString(5), resultSet1.getString(6));
             knowledgedataList.add(knowledgedata);
 
         }
