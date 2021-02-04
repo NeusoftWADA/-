@@ -143,19 +143,19 @@
                 <!--导航条内容-->
                 <li class="active"><a href="#">首页 <span
                         class="sr-only">(current)</span></a></li>
-                <li><a href="#">JAVA</a></li>
-                <li><a href="#">PS</a></li>
-                <li><a href="#">C++</a></li>
+                <li><a href="SearchServlet?search=JAVA">JAVA</a></li>
+                <li><a href="SearchServlet?search=PS">PS</a></li>
+                <li><a href="SearchServlet?search=C%2B%2B">C++</a></li>
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown"
                        role="button" aria-expanded="false">更多<span
                             class="caret"></span></a>
                     <ul class="dropdown-menu" role="menu">
-                        <li><a href="#">Vue</a></li>
-                        <li><a href="#">C#</a></li>
-                        <li><a href="#">Html</a></li>
-                        <li><a href="#">C#高级</a></li>
-                        <li><a href="#">Python</a></li>
+                        <li><a href="SearchServlet?search=Vue">Vue</a></li>
+                        <li><a href="SearchServlet?search=C%23">C#</a></li>
+                        <li><a href="SearchServlet?search=HTML">HTML</a></li>
+                        <li><a href="SearchServlet?search=C%23高级">C#高级</a></li>
+                        <li><a href="SearchServlet?search=Python">Python</a></li>
                     </ul>
                 </li>
             </ul>

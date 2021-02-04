@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -23,7 +24,7 @@ public class SearchServlet extends HttpServlet {
         response.setHeader("content-type", "text/html;charset=utf-8");
         String search = request.getParameter("search");
         Database database=new Database();
-        String sql = "SELECT * FROM knowledge where content like '%"+search+"%'";
+        String sql = "SELECT * FROM knowledge where content like '%"+search+"%' or title like '%"+search+"%' or abstract like '%"+search+"%'";
         List<Knowledgedata> knowledgedataList = new ArrayList<>();
         PreparedStatement preparedStatement = null;
         ResultSet resultSet = null;
@@ -52,7 +53,8 @@ public class SearchServlet extends HttpServlet {
             request.getRequestDispatcher("search.jsp").forward(request,response);
         }
         else{
-
+            PrintWriter writer = response.getWriter();
+            writer.println("暂无该词条！");
         }
     }
 
