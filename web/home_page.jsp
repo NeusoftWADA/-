@@ -160,9 +160,9 @@
                 </li>
             </ul>
             <!--搜索表单-->
-            <form class="navbar-form navbar-left" role="search">
+            <form class="navbar-form navbar-left" action="SearchServlet" method="get">
                 <div class="form-group">
-                    <input type="text" class="form-control" placeholder="Search" />
+                    <input type="text" class="form-control" name="search" placeholder="Search" />
                 </div>
                 <button type="submit" class="btn btn-default">搜索</button>
             </form>
@@ -479,7 +479,6 @@
 </div>
 
 </div>
-
 <script>
         <%--var size = <%=i%>;--%>
         <%--for(var i=0;i<size;i++){--%>
