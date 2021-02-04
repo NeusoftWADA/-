@@ -175,7 +175,7 @@
                        role="button" aria-expanded="false">用户<span
                             class="caret"></span></a>
                     <ul class="dropdown-menu" role="menu">
-                        <li><a href="log.html">登录</a></li>
+                        <li><a href="index.html">登录</a></li>
                         <li><a href="reg.html">注册</a></li>
 <%--                        <li><a href="reg.html">注销</a></li>--%>
                     </ul>
