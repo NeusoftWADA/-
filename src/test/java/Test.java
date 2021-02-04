@@ -1,14 +1,11 @@
 import database.Database;
 import entity.Knowledgedata;
-import org.apache.commons.beanutils.BasicDynaBean;
-import org.apache.commons.beanutils.RowSetDynaClass;
 
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Vector;
 
 public class Test {
     public static void main(String[] args) throws SQLException, ClassNotFoundException {
