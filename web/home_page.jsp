@@ -303,7 +303,20 @@
                 %>
 
                 <a class="list-group-item active" align="center">我的知识库</a>
-                <a href="#" class="list-group-item lgi" align="center"><%=knowledgedataList.get(0).getTitle()%></a>
+                <a href="#" class="list-group-item lgi" align="center">
+                    <div class="row">
+                        <div class="col-sm-12"><h4><font color="#00FF00"><%=knowledgedataList.get(0).getTitle()%></font></h4></div>
+                        <div class="col-sm-3"><span style="background-color:#000000;"><font color="#ffffff">2017年12月3日17点41分</font></span></div>
+                        <div class="col-sm-2">
+                            <h7>阅读 </h7><span style="background-color:#55aa7f;"><font color="#ffffff">42</font></span>
+
+                            <h7>点赞 </h7><span style="background-color:#55aa7f;"><font color="#ffffff">32</font></span>
+                        </div>
+                        <button type="button" class="btn btn-primary btn-xs">编辑</button>
+                        <button type="button" class="btn btn-danger btn-xs">删除</button>
+                        <div class="col-sm-12">dhshkakdskdbkbskdbskdbsjkdbskdb但是第三段所</div>
+                    </div>
+                </a>
                 <a href="#" class="list-group-item lgi" align="center"><%=knowledgedataList.get(1).getTitle()%></a>
                 <a href="#" class="list-group-item lgi" align="center"><%=knowledgedataList.get(2).getTitle()%></a>
                 <a href="#" class="list-group-item lgi" align="center"><%=knowledgedataList.get(3).getTitle()%></a>
