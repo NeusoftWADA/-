@@ -303,155 +303,226 @@
                 %>
 
                 <a class="list-group-item active" align="center">我的知识库</a>
-                <a href="#" class="list-group-item lgi" align="center">
+                <a href="#" class="list-group-item lgi">
                     <div class="row">
-                        <div class="col-sm-12"><h4><font color="#00FF00"><%=knowledgedataList.get(0).getTitle()%></font></h4></div>
-                        <div class="col-sm-12"><span style="background-color:#000000;"><font color="#ffffff"><%=knowledgedataList.get(0).getCreateTime()%></font></span></div>
-<%--                        <div class="col-sm-2">--%>
-<%--                            <h7>阅读 </h7><span style="background-color:#55aa7f;"><font color="#ffffff">42</font></span>--%>
-
-<%--                            <h7>点赞 </h7><span style="background-color:#55aa7f;"><font color="#ffffff">32</font></span>--%>
-<%--                        </div>--%>
-<%--                        <button type="button" class="btn btn-primary btn-xs">编辑</button>--%>
-<%--                        <button type="button" class="btn btn-danger btn-xs">删除</button>--%>
+                        <div class="col-sm-9"><h4><font color="#00FF00"><%=knowledgedataList.get(0).getTitle()%></font></h4></div>
+                        <div class="col-sm-3">
+<%--                        <span style="background-color:#000000;">--%>
+                            <font color="#a9a9a9"><%=knowledgedataList.get(0).getCreateTime()%></font>
+<%--                        </span>--%>
+                        </div>
                         <div class="col-sm-12"><%=knowledgedataList.get(0).getAbstract()%></div>
+                        <div class="col-sm-10">
+                            <h7>阅读 </h7><span style="background-color:#55aa7f;"><font color="#ffffff">42</font></span>
+
+                            <h7>点赞 </h7><span style="background-color:#55aa7f;"><font color="#ffffff">32</font></span>
+                        </div>
+                        <div class="col-sm-2">
+                            <button type="button" class="btn btn-primary btn-xs">编辑</button>
+                            <button type="button" class="btn btn-danger btn-xs">删除</button>
+                        </div>
                     </div>
                 </a>
-                <a href="#" class="list-group-item lgi" align="center">
+                <a href="#" class="list-group-item lgi">
                     <div class="row">
-                        <div class="col-sm-12"><h4><font color="#00FF00"><%=knowledgedataList.get(0).getTitle()%></font></h4></div>
-                        <div class="col-sm-12"><span style="background-color:#000000;"><font color="#ffffff"><%=knowledgedataList.get(0).getCreateTime()%></font></span></div>
-                        <%--                        <div class="col-sm-2">--%>
-                        <%--                            <h7>阅读 </h7><span style="background-color:#55aa7f;"><font color="#ffffff">42</font></span>--%>
-
-                        <%--                            <h7>点赞 </h7><span style="background-color:#55aa7f;"><font color="#ffffff">32</font></span>--%>
-                        <%--                        </div>--%>
-                        <%--                        <button type="button" class="btn btn-primary btn-xs">编辑</button>--%>
-                        <%--                        <button type="button" class="btn btn-danger btn-xs">删除</button>--%>
-                        <div class="col-sm-12"><%=knowledgedataList.get(0).getAbstract()%></div>
-                    </div>
-                </a>
-                <a href="#" class="list-group-item lgi" align="center">
-                    <div class="row">
-                        <div class="col-sm-12"><h4><font color="#00FF00"><%=knowledgedataList.get(1).getTitle()%></font></h4></div>
-                        <div class="col-sm-12"><span style="background-color:#000000;"><font color="#ffffff"><%=knowledgedataList.get(1).getCreateTime()%></font></span></div>
-                        <%--                        <div class="col-sm-2">--%>
-                        <%--                            <h7>阅读 </h7><span style="background-color:#55aa7f;"><font color="#ffffff">42</font></span>--%>
-
-                        <%--                            <h7>点赞 </h7><span style="background-color:#55aa7f;"><font color="#ffffff">32</font></span>--%>
-                        <%--                        </div>--%>
-                        <%--                        <button type="button" class="btn btn-primary btn-xs">编辑</button>--%>
-                        <%--                        <button type="button" class="btn btn-danger btn-xs">删除</button>--%>
+                        <div class="col-sm-9"><h4><font color="#00FF00"><%=knowledgedataList.get(1).getTitle()%></font></h4></div>
+                        <div class="col-sm-3">
+                            <%--                        <span style="background-color:#000000;">--%>
+                            <font color="#a9a9a9"><%=knowledgedataList.get(1).getCreateTime()%></font>
+                            <%--                        </span>--%>
+                        </div>
                         <div class="col-sm-12"><%=knowledgedataList.get(1).getAbstract()%></div>
+                        <div class="col-sm-10">
+                            <h7>阅读 </h7><span style="background-color:#55aa7f;"><font color="#ffffff">42</font></span>
+
+                            <h7>点赞 </h7><span style="background-color:#55aa7f;"><font color="#ffffff">32</font></span>
+                        </div>
+                        <div class="col-sm-2">
+                            <button type="button" class="btn btn-primary btn-xs">编辑</button>
+                            <button type="button" class="btn btn-danger btn-xs">删除</button>
+                        </div>
                     </div>
                 </a>
-                <a href="#" class="list-group-item lgi" align="center">
+                <a href="#" class="list-group-item lgi">
                     <div class="row">
-                        <div class="col-sm-12"><h4><font color="#00FF00"><%=knowledgedataList.get(2).getTitle()%></font></h4></div>
-                        <div class="col-sm-12"><span style="background-color:#000000;"><font color="#ffffff"><%=knowledgedataList.get(2).getCreateTime()%></font></span></div>
-                        <%--                        <div class="col-sm-2">--%>
-                        <%--                            <h7>阅读 </h7><span style="background-color:#55aa7f;"><font color="#ffffff">42</font></span>--%>
-
-                        <%--                            <h7>点赞 </h7><span style="background-color:#55aa7f;"><font color="#ffffff">32</font></span>--%>
-                        <%--                        </div>--%>
-                        <%--                        <button type="button" class="btn btn-primary btn-xs">编辑</button>--%>
-                        <%--                        <button type="button" class="btn btn-danger btn-xs">删除</button>--%>
+                        <div class="col-sm-9"><h4><font color="#00FF00"><%=knowledgedataList.get(2).getTitle()%></font></h4></div>
+                        <div class="col-sm-3">
+                            <%--                        <span style="background-color:#000000;">--%>
+                            <font color="#a9a9a9"><%=knowledgedataList.get(2).getCreateTime()%></font>
+                            <%--                        </span>--%>
+                        </div>
                         <div class="col-sm-12"><%=knowledgedataList.get(2).getAbstract()%></div>
+                        <div class="col-sm-10">
+                            <h7>阅读 </h7><span style="background-color:#55aa7f;"><font color="#ffffff">42</font></span>
+
+                            <h7>点赞 </h7><span style="background-color:#55aa7f;"><font color="#ffffff">32</font></span>
+                        </div>
+                        <div class="col-sm-2">
+                            <button type="button" class="btn btn-primary btn-xs">编辑</button>
+                            <button type="button" class="btn btn-danger btn-xs">删除</button>
+                        </div>
                     </div>
                 </a>
-                <a href="#" class="list-group-item lgi" align="center">
+                <a href="#" class="list-group-item lgi" >
                     <div class="row">
-                        <div class="col-sm-12"><h4><font color="#00FF00"><%=knowledgedataList.get(3).getTitle()%></font></h4></div>
-                        <div class="col-sm-12"><span style="background-color:#000000;"><font color="#ffffff"><%=knowledgedataList.get(3).getCreateTime()%></font></span></div>
-                        <%--                        <div class="col-sm-2">--%>
-                        <%--                            <h7>阅读 </h7><span style="background-color:#55aa7f;"><font color="#ffffff">42</font></span>--%>
-
-                        <%--                            <h7>点赞 </h7><span style="background-color:#55aa7f;"><font color="#ffffff">32</font></span>--%>
-                        <%--                        </div>--%>
-                        <%--                        <button type="button" class="btn btn-primary btn-xs">编辑</button>--%>
-                        <%--                        <button type="button" class="btn btn-danger btn-xs">删除</button>--%>
+                        <div class="col-sm-9"><h4><font color="#00FF00"><%=knowledgedataList.get(3).getTitle()%></font></h4></div>
+                        <div class="col-sm-3">
+                            <%--                        <span style="background-color:#000000;">--%>
+                            <font color="#a9a9a9"><%=knowledgedataList.get(3).getCreateTime()%></font>
+                            <%--                        </span>--%>
+                        </div>
                         <div class="col-sm-12"><%=knowledgedataList.get(3).getAbstract()%></div>
+                        <div class="col-sm-10">
+                            <h7>阅读 </h7><span style="background-color:#55aa7f;"><font color="#ffffff">42</font></span>
+
+                            <h7>点赞 </h7><span style="background-color:#55aa7f;"><font color="#ffffff">32</font></span>
+                        </div>
+                        <div class="col-sm-2">
+                            <button type="button" class="btn btn-primary btn-xs">编辑</button>
+                            <button type="button" class="btn btn-danger btn-xs">删除</button>
+                        </div>
                     </div>
                 </a>
-                <a href="#" class="list-group-item lgi" align="center">
+                <a href="#" class="list-group-item lgi">
                     <div class="row">
-                        <div class="col-sm-12"><h4><font color="#00FF00"><%=knowledgedataList.get(4).getTitle()%></font></h4></div>
-                        <div class="col-sm-12"><span style="background-color:#000000;"><font color="#ffffff"><%=knowledgedataList.get(4).getCreateTime()%></font></span></div>
-                        <%--                        <div class="col-sm-2">--%>
-                        <%--                            <h7>阅读 </h7><span style="background-color:#55aa7f;"><font color="#ffffff">42</font></span>--%>
-
-                        <%--                            <h7>点赞 </h7><span style="background-color:#55aa7f;"><font color="#ffffff">32</font></span>--%>
-                        <%--                        </div>--%>
-                        <%--                        <button type="button" class="btn btn-primary btn-xs">编辑</button>--%>
-                        <%--                        <button type="button" class="btn btn-danger btn-xs">删除</button>--%>
+                        <div class="col-sm-9"><h4><font color="#00FF00"><%=knowledgedataList.get(4).getTitle()%></font></h4></div>
+                        <div class="col-sm-3">
+                            <%--                        <span style="background-color:#000000;">--%>
+                            <font color="#a9a9a9"><%=knowledgedataList.get(4).getCreateTime()%></font>
+                            <%--                        </span>--%>
+                        </div>
                         <div class="col-sm-12"><%=knowledgedataList.get(4).getAbstract()%></div>
+                        <div class="col-sm-10">
+                            <h7>阅读 </h7><span style="background-color:#55aa7f;"><font color="#ffffff">42</font></span>
+
+                            <h7>点赞 </h7><span style="background-color:#55aa7f;"><font color="#ffffff">32</font></span>
+                        </div>
+                        <div class="col-sm-2">
+                            <button type="button" class="btn btn-primary btn-xs">编辑</button>
+                            <button type="button" class="btn btn-danger btn-xs">删除</button>
+                        </div>
                     </div>
                 </a>
-                <a href="#" class="list-group-item lgi" align="center">
+                <a href="#" class="list-group-item lgi">
                     <div class="row">
-                        <div class="col-sm-12"><h4><font color="#00FF00"><%=knowledgedataList.get(5).getTitle()%></font></h4></div>
-                        <div class="col-sm-12"><span style="background-color:#000000;"><font color="#ffffff"><%=knowledgedataList.get(5).getCreateTime()%></font></span></div>
-                        <%--                        <div class="col-sm-2">--%>
-                        <%--                            <h7>阅读 </h7><span style="background-color:#55aa7f;"><font color="#ffffff">42</font></span>--%>
-
-                        <%--                            <h7>点赞 </h7><span style="background-color:#55aa7f;"><font color="#ffffff">32</font></span>--%>
-                        <%--                        </div>--%>
-                        <%--                        <button type="button" class="btn btn-primary btn-xs">编辑</button>--%>
-                        <%--                        <button type="button" class="btn btn-danger btn-xs">删除</button>--%>
+                        <div class="col-sm-9"><h4><font color="#00FF00"><%=knowledgedataList.get(5).getTitle()%></font></h4></div>
+                        <div class="col-sm-3">
+                            <%--                        <span style="background-color:#000000;">--%>
+                            <font color="#a9a9a9"><%=knowledgedataList.get(5).getCreateTime()%></font>
+                            <%--                        </span>--%>
+                        </div>
                         <div class="col-sm-12"><%=knowledgedataList.get(5).getAbstract()%></div>
+                        <div class="col-sm-10">
+                            <h7>阅读 </h7><span style="background-color:#55aa7f;"><font color="#ffffff">42</font></span>
+
+                            <h7>点赞 </h7><span style="background-color:#55aa7f;"><font color="#ffffff">32</font></span>
+                        </div>
+                        <div class="col-sm-2">
+                            <button type="button" class="btn btn-primary btn-xs">编辑</button>
+                            <button type="button" class="btn btn-danger btn-xs">删除</button>
+                        </div>
                     </div>
-                </a>                <a href="#" class="list-group-item lgi" align="center">
-                <div class="row">
-                    <div class="col-sm-12"><h4><font color="#00FF00"><%=knowledgedataList.get(6).getTitle()%></font></h4></div>
-                    <div class="col-sm-12"><span style="background-color:#000000;"><font color="#ffffff"><%=knowledgedataList.get(6).getCreateTime()%></font></span></div>
-                    <%--                        <div class="col-sm-2">--%>
-                    <%--                            <h7>阅读 </h7><span style="background-color:#55aa7f;"><font color="#ffffff">42</font></span>--%>
+                </a>
+                <a href="#" class="list-group-item lgi" >
+                    <div class="row">
+                        <div class="col-sm-9"><h4><font color="#00FF00"><%=knowledgedataList.get(6).getTitle()%></font></h4></div>
+                        <div class="col-sm-3">
+                            <%--                        <span style="background-color:#000000;">--%>
+                            <font color="#a9a9a9"><%=knowledgedataList.get(6).getCreateTime()%></font>
+                            <%--                        </span>--%>
+                        </div>
+                        <div class="col-sm-12"><%=knowledgedataList.get(6).getAbstract()%></div>
+                        <div class="col-sm-10">
+                            <h7>阅读 </h7><span style="background-color:#55aa7f;"><font color="#ffffff">42</font></span>
 
-                    <%--                            <h7>点赞 </h7><span style="background-color:#55aa7f;"><font color="#ffffff">32</font></span>--%>
-                    <%--                        </div>--%>
-                    <%--                        <button type="button" class="btn btn-primary btn-xs">编辑</button>--%>
-                    <%--                        <button type="button" class="btn btn-danger btn-xs">删除</button>--%>
-                    <div class="col-sm-12"><%=knowledgedataList.get(6).getAbstract()%></div>
-                </div>
-            </a>                <a href="#" class="list-group-item lgi" align="center">
-                <div class="row">
-                    <div class="col-sm-12"><h4><font color="#00FF00"><%=knowledgedataList.get(7).getTitle()%></font></h4></div>
-                    <div class="col-sm-12"><span style="background-color:#000000;"><font color="#ffffff"><%=knowledgedataList.get(7).getCreateTime()%></font></span></div>
-                    <%--                        <div class="col-sm-2">--%>
-                    <%--                            <h7>阅读 </h7><span style="background-color:#55aa7f;"><font color="#ffffff">42</font></span>--%>
+                            <h7>点赞 </h7><span style="background-color:#55aa7f;"><font color="#ffffff">32</font></span>
+                        </div>
+                        <div class="col-sm-2">
+                            <button type="button" class="btn btn-primary btn-xs">编辑</button>
+                            <button type="button" class="btn btn-danger btn-xs">删除</button>
+                        </div>
+                    </div>
+                </a>
+                <a href="#" class="list-group-item lgi">
+<%--                <div class="row">--%>
+                    <div class="row">
+                        <div class="col-sm-9"><h4><font color="#00FF00"><%=knowledgedataList.get(7).getTitle()%></font></h4></div>
+                        <div class="col-sm-3">
+                            <%--                        <span style="background-color:#000000;">--%>
+                            <font color="#a9a9a9"><%=knowledgedataList.get(7).getCreateTime()%></font>
+                            <%--                        </span>--%>
+                        </div>
+                        <div class="col-sm-12"><%=knowledgedataList.get(7).getAbstract()%></div>
+                        <div class="col-sm-10">
+                            <h7>阅读 </h7><span style="background-color:#55aa7f;"><font color="#ffffff">42</font></span>
 
-                    <%--                            <h7>点赞 </h7><span style="background-color:#55aa7f;"><font color="#ffffff">32</font></span>--%>
-                    <%--                        </div>--%>
-                    <%--                        <button type="button" class="btn btn-primary btn-xs">编辑</button>--%>
-                    <%--                        <button type="button" class="btn btn-danger btn-xs">删除</button>--%>
-                    <div class="col-sm-12"><%=knowledgedataList.get(7).getAbstract()%></div>
-                </div>
-            </a>                <a href="#" class="list-group-item lgi" align="center">
-                <div class="row">
-                    <div class="col-sm-12"><h4><font color="#00FF00"><%=knowledgedataList.get(8).getTitle()%></font></h4></div>
-                    <div class="col-sm-12"><span style="background-color:#000000;"><font color="#ffffff"><%=knowledgedataList.get(8).getCreateTime()%></font></span></div>
-                    <%--                        <div class="col-sm-2">--%>
-                    <%--                            <h7>阅读 </h7><span style="background-color:#55aa7f;"><font color="#ffffff">42</font></span>--%>
+                            <h7>点赞 </h7><span style="background-color:#55aa7f;"><font color="#ffffff">32</font></span>
+                        </div>
+                        <div class="col-sm-2">
+                            <button type="button" class="btn btn-primary btn-xs">编辑</button>
+                            <button type="button" class="btn btn-danger btn-xs">删除</button>
+                        </div>
+                    </div>
+<%--                </div>--%>
+            </a>
+                <a href="#" class="list-group-item lgi">
+                    <div class="row">
+                        <div class="col-sm-9"><h4><font color="#00FF00"><%=knowledgedataList.get(8).getTitle()%></font></h4></div>
+                        <div class="col-sm-3">
+                            <%--                        <span style="background-color:#000000;">--%>
+                            <font color="#a9a9a9"><%=knowledgedataList.get(8).getCreateTime()%></font>
+                            <%--                        </span>--%>
+                        </div>
+                        <div class="col-sm-12"><%=knowledgedataList.get(8).getAbstract()%></div>
+                        <div class="col-sm-10">
+                            <h7>阅读 </h7><span style="background-color:#55aa7f;"><font color="#ffffff">42</font></span>
 
-                    <%--                            <h7>点赞 </h7><span style="background-color:#55aa7f;"><font color="#ffffff">32</font></span>--%>
-                    <%--                        </div>--%>
-                    <%--                        <button type="button" class="btn btn-primary btn-xs">编辑</button>--%>
-                    <%--                        <button type="button" class="btn btn-danger btn-xs">删除</button>--%>
-                    <div class="col-sm-12"><%=knowledgedataList.get(8).getAbstract()%></div>
+                            <h7>点赞 </h7><span style="background-color:#55aa7f;"><font color="#ffffff">32</font></span>
+                        </div>
+                        <div class="col-sm-2">
+                            <button type="button" class="btn btn-primary btn-xs">编辑</button>
+                            <button type="button" class="btn btn-danger btn-xs">删除</button>
+                        </div>
+                    </div>
+            </a>
+                <a href="#" class="list-group-item lgi" >
+                <div class="row">
+                    <div class="col-sm-9"><h4><font color="#00FF00"><%=knowledgedataList.get(9).getTitle()%></font></h4></div>
+                    <div class="col-sm-3">
+                        <%--                        <span style="background-color:#000000;">--%>
+                        <font color="#a9a9a9"><%=knowledgedataList.get(9).getCreateTime()%></font>
+                        <%--                        </span>--%>
+                    </div>
+                    <div class="col-sm-12"><%=knowledgedataList.get(9).getAbstract()%></div>
+                    <div class="col-sm-10">
+                        <h7>阅读 </h7><span style="background-color:#55aa7f;"><font color="#ffffff">42</font></span>
+
+                        <h7>点赞 </h7><span style="background-color:#55aa7f;"><font color="#ffffff">32</font></span>
+                    </div>
+                    <div class="col-sm-2">
+                        <button type="button" class="btn btn-primary btn-xs">编辑</button>
+                        <button type="button" class="btn btn-danger btn-xs">删除</button>
+                    </div>
                 </div>
             </a>
-                <a href="#" class="list-group-item lgi" align="center">
+                <a href="#" class="list-group-item lgi">
                     <div class="row">
-                        <div class="col-sm-12"><h4><font color="#00FF00"><%=knowledgedataList.get(9).getTitle()%></font></h4></div>
-                        <div class="col-sm-12"><span style="background-color:#000000;"><font color="#ffffff"><%=knowledgedataList.get(9).getCreateTime()%></font></span></div>
-                        <%--                        <div class="col-sm-2">--%>
-                        <%--                            <h7>阅读 </h7><span style="background-color:#55aa7f;"><font color="#ffffff">42</font></span>--%>
-
-                        <%--                            <h7>点赞 </h7><span style="background-color:#55aa7f;"><font color="#ffffff">32</font></span>--%>
-                        <%--                        </div>--%>
-                        <%--                        <button type="button" class="btn btn-primary btn-xs">编辑</button>--%>
-                        <%--                        <button type="button" class="btn btn-danger btn-xs">删除</button>--%>
+                        <div class="col-sm-9"><h4><font color="#00FF00"><%=knowledgedataList.get(9).getTitle()%></font></h4></div>
+                        <div class="col-sm-3">
+                            <%--                        <span style="background-color:#000000;">--%>
+                            <font color="#a9a9a9"><%=knowledgedataList.get(9).getCreateTime()%></font>
+                            <%--                        </span>--%>
+                        </div>
                         <div class="col-sm-12"><%=knowledgedataList.get(9).getAbstract()%></div>
+                        <div class="col-sm-10">
+                            <h7>阅读 </h7><span style="background-color:#55aa7f;"><font color="#ffffff">42</font></span>
+
+                            <h7>点赞 </h7><span style="background-color:#55aa7f;"><font color="#ffffff">32</font></span>
+                        </div>
+                        <div class="col-sm-2">
+                            <button type="button" class="btn btn-primary btn-xs">编辑</button>
+                            <button type="button" class="btn btn-danger btn-xs">删除</button>
+                        </div>
                     </div>
                 </a>
 
