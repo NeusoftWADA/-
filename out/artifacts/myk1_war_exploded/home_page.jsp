@@ -101,7 +101,7 @@
     <!--移动设备都是这Viewport里面打开，width=device-width表示打开页面默认和设备一致，initial-scale=1表示页面不进行缩放   -->
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
-    <title>Bootstrap 101 Template</title>
+    <title>知识库首页</title>
 
     <!-- Bootstrap -->
     <!--<link href="css/bootstrap.min.css" rel="stylesheet"/>-->
@@ -443,29 +443,6 @@
                     </div>
                 </div>
             </a>
-<%--                <a href="#" class="list-group-item lgi">--%>
-<%--                    <div class="row">--%>
-<%--                        <div class="col-sm-9"><h4><font color="#00FF00"><%=knowledgedataList.get(9).getTitle()%></font></h4></div>--%>
-<%--                        <div class="col-sm-3">--%>
-<%--                            &lt;%&ndash;                        <span style="background-color:#000000;">&ndash;%&gt;--%>
-<%--                            <font color="#a9a9a9"><%=knowledgedataList.get(9).getCreateTime()%></font>--%>
-<%--                            &lt;%&ndash;                        </span>&ndash;%&gt;--%>
-<%--                        </div>--%>
-<%--                        <div class="col-sm-12"><%=knowledgedataList.get(9).getAbstract()%></div>--%>
-<%--                        <div class="col-sm-10">--%>
-<%--                            <h7>阅读 </h7><span style="background-color:#55aa7f;"><font color="#ffffff">42</font></span>--%>
-
-<%--                            <h7>点赞 </h7><span style="background-color:#55aa7f;"><font color="#ffffff">32</font></span>--%>
-<%--                        </div>--%>
-<%--                        <div class="col-sm-2">--%>
-<%--                            <button type="button" class="btn btn-primary btn-xs">编辑</button>--%>
-<%--                            <button type="button" class="btn btn-danger btn-xs">删除</button>--%>
-<%--                        </div>--%>
-<%--                    </div>--%>
-<%--                </a>--%>
-
-
-
 
                 <a href="#">查看更多</a>
             </div>
