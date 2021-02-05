@@ -143,26 +143,26 @@
                 <!--导航条内容-->
                 <li class="active"><a href="#">首页 <span
                         class="sr-only">(current)</span></a></li>
-                <li><a href="#">JAVA</a></li>
-                <li><a href="#">PS</a></li>
-                <li><a href="#">C++</a></li>
+                <li><a href="SearchServlet?search=C%2B%2B">C++</a></li>
+                <li><a href="SearchServlet?search=Java">Java</a></li>
+                <li><a href="SearchServlet?search=Linux">Linux</a></li>
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown"
                        role="button" aria-expanded="false">更多<span
                             class="caret"></span></a>
                     <ul class="dropdown-menu" role="menu">
-                        <li><a href="#">Vue</a></li>
-                        <li><a href="#">C#</a></li>
-                        <li><a href="#">Html</a></li>
-                        <li><a href="#">C#高级</a></li>
-                        <li><a href="#">Python</a></li>
+                        <li><a href="SearchServlet?search=算法">算法</a></li>
+                        <li><a href="SearchServlet?search=C%23">C#</a></li>
+                        <li><a href="SearchServlet?search=HTML">HTML</a></li>
+                        <li><a href="SearchServlet?search=test">test</a></li>
+                        <li><a href="SearchServlet?search=Python">Python</a></li>
                     </ul>
                 </li>
             </ul>
             <!--搜索表单-->
-            <form class="navbar-form navbar-left" role="search">
+            <form class="navbar-form navbar-left" action="SearchServlet" method="get">
                 <div class="form-group">
-                    <input type="text" class="form-control" placeholder="Search" />
+                    <input type="text" class="form-control" name="search" placeholder="Search" />
                 </div>
                 <button type="submit" class="btn btn-default">搜索</button>
             </form>
@@ -175,7 +175,7 @@
                        role="button" aria-expanded="false">用户<span
                             class="caret"></span></a>
                     <ul class="dropdown-menu" role="menu">
-                        <li><a href="log.html">登录</a></li>
+                        <li><a href="index.html">登录</a></li>
                         <li><a href="reg.html">注册</a></li>
 <%--                        <li><a href="reg.html">注销</a></li>--%>
                     </ul>
@@ -303,13 +303,22 @@
                 %>
 
                 <a class="list-group-item active" align="center">我的知识库</a>
+
+                <%
+                    int num = 10;
+                    int cnt1 = 0;
+                    while ( cnt1 < num ) {
+                %>
                 <a href="#" class="list-group-item lgi">
                     <div class="row">
-                        <div class="col-sm-9"><h4><font color="#00FF00"><%=knowledgedataList.get(0).getTitle()%></font></h4></div>
+                        <div class="col-sm-9"><h4><font color="#00FF00">
+                            <label><span class="badge badge-secondary"><%=cnt1 + 1%></span></label>
+                            <%=knowledgedataList.get(cnt1).getTitle()%>
+                        </font></h4></div>
                         <div class="col-sm-3">
-                            <font color="#a9a9a9"><%=knowledgedataList.get(0).getCreateTime()%></font>
+                            <font color="#a9a9a9"><%=knowledgedataList.get(cnt1).getCreateTime()%></font>
                         </div>
-                        <div class="col-sm-12"><%=knowledgedataList.get(0).getAbstract()%></div>
+                        <div class="col-sm-12"><%=knowledgedataList.get(cnt1).getAbstract()%></div>
                         <div class="col-sm-10"></div>
                         <div class="col-sm-2">
                             <button type="button" class="btn btn-primary btn-xs">编辑</button>
@@ -317,132 +326,10 @@
                         </div>
                     </div>
                 </a>
-                <a href="#" class="list-group-item lgi">
-                    <div class="row">
-                        <div class="col-sm-9"><h4><font color="#00FF00"><%=knowledgedataList.get(1).getTitle()%></font></h4></div>
-                        <div class="col-sm-3">
-                            <font color="#a9a9a9"><%=knowledgedataList.get(1).getCreateTime()%></font>
-                        </div>
-                        <div class="col-sm-12"><%=knowledgedataList.get(1).getAbstract()%></div>
-                        <div class="col-sm-10"></div>
-                        <div class="col-sm-2">
-                            <button type="button" class="btn btn-primary btn-xs">编辑</button>
-                            <button type="button" class="btn btn-danger btn-xs">删除</button>
-                        </div>
-                    </div>
-                </a>
-                <a href="#" class="list-group-item lgi">
-                    <div class="row">
-                        <div class="col-sm-9"><h4><font color="#00FF00"><%=knowledgedataList.get(2).getTitle()%></font></h4></div>
-                        <div class="col-sm-3">
-                            <font color="#a9a9a9"><%=knowledgedataList.get(2).getCreateTime()%></font>
-                        </div>
-                        <div class="col-sm-12"><%=knowledgedataList.get(2).getAbstract()%></div>
-                        <div class="col-sm-10"></div>
-                        <div class="col-sm-2">
-                            <button type="button" class="btn btn-primary btn-xs">编辑</button>
-                            <button type="button" class="btn btn-danger btn-xs">删除</button>
-                        </div>
-                    </div>
-                </a>
-                <a href="#" class="list-group-item lgi" >
-                    <div class="row">
-                        <div class="col-sm-9"><h4><font color="#00FF00"><%=knowledgedataList.get(3).getTitle()%></font></h4></div>
-                        <div class="col-sm-3">
-                            <font color="#a9a9a9"><%=knowledgedataList.get(3).getCreateTime()%></font>
-                        </div>
-                        <div class="col-sm-12"><%=knowledgedataList.get(3).getAbstract()%></div>
-                        <div class="col-sm-10"></div>
-                        <div class="col-sm-2">
-                            <button type="button" class="btn btn-primary btn-xs">编辑</button>
-                            <button type="button" class="btn btn-danger btn-xs">删除</button>
-                        </div>
-                    </div>
-                </a>
-                <a href="#" class="list-group-item lgi">
-                    <div class="row">
-                        <div class="col-sm-9"><h4><font color="#00FF00"><%=knowledgedataList.get(4).getTitle()%></font></h4></div>
-                        <div class="col-sm-3">
-                            <font color="#a9a9a9"><%=knowledgedataList.get(4).getCreateTime()%></font>
-                        </div>
-                        <div class="col-sm-12"><%=knowledgedataList.get(4).getAbstract()%></div>
-                        <div class="col-sm-10"></div>
-                        <div class="col-sm-2">
-                            <button type="button" class="btn btn-primary btn-xs">编辑</button>
-                            <button type="button" class="btn btn-danger btn-xs">删除</button>
-                        </div>
-                    </div>
-                </a>
-                <a href="#" class="list-group-item lgi">
-                    <div class="row">
-                        <div class="col-sm-9"><h4><font color="#00FF00"><%=knowledgedataList.get(5).getTitle()%></font></h4></div>
-                        <div class="col-sm-3">
-                            <font color="#a9a9a9"><%=knowledgedataList.get(5).getCreateTime()%></font>
-                        </div>
-                        <div class="col-sm-12"><%=knowledgedataList.get(5).getAbstract()%></div>
-                        <div class="col-sm-10"></div>
-                        <div class="col-sm-2">
-                            <button type="button" class="btn btn-primary btn-xs">编辑</button>
-                            <button type="button" class="btn btn-danger btn-xs">删除</button>
-                        </div>
-                    </div>
-                </a>
-                <a href="#" class="list-group-item lgi" >
-                    <div class="row">
-                        <div class="col-sm-9"><h4><font color="#00FF00"><%=knowledgedataList.get(6).getTitle()%></font></h4></div>
-                        <div class="col-sm-3">
-                            <font color="#a9a9a9"><%=knowledgedataList.get(6).getCreateTime()%></font>
-                        </div>
-                        <div class="col-sm-12"><%=knowledgedataList.get(6).getAbstract()%></div>
-                        <div class="col-sm-10"></div>
-                        <div class="col-sm-2">
-                            <button type="button" class="btn btn-primary btn-xs">编辑</button>
-                            <button type="button" class="btn btn-danger btn-xs">删除</button>
-                        </div>
-                    </div>
-                </a>
-                <a href="#" class="list-group-item lgi">
-                    <div class="row">
-                        <div class="col-sm-9"><h4><font color="#00FF00"><%=knowledgedataList.get(7).getTitle()%></font></h4></div>
-                        <div class="col-sm-3">
-                            <font color="#a9a9a9"><%=knowledgedataList.get(7).getCreateTime()%></font>
-                        </div>
-                        <div class="col-sm-12"><%=knowledgedataList.get(7).getAbstract()%></div>
-                        <div class="col-sm-10"></div>
-                        <div class="col-sm-2">
-                            <button type="button" class="btn btn-primary btn-xs">编辑</button>
-                            <button type="button" class="btn btn-danger btn-xs">删除</button>
-                        </div>
-                    </div>
-            </a>
-                <a href="#" class="list-group-item lgi">
-                    <div class="row">
-                        <div class="col-sm-9"><h4><font color="#00FF00"><%=knowledgedataList.get(8).getTitle()%></font></h4></div>
-                        <div class="col-sm-3">
-                            <font color="#a9a9a9"><%=knowledgedataList.get(8).getCreateTime()%></font>
-                        </div>
-                        <div class="col-sm-12"><%=knowledgedataList.get(8).getAbstract()%></div>
-                        <div class="col-sm-10"></div>
-                        <div class="col-sm-2">
-                            <button type="button" class="btn btn-primary btn-xs">编辑</button>
-                            <button type="button" class="btn btn-danger btn-xs">删除</button>
-                        </div>
-                    </div>
-            </a>
-                <a href="#" class="list-group-item lgi" >
-                <div class="row">
-                    <div class="col-sm-9"><h4><font color="#00FF00"><%=knowledgedataList.get(9).getTitle()%></font></h4></div>
-                    <div class="col-sm-3">
-                        <font color="#a9a9a9"><%=knowledgedataList.get(9).getCreateTime()%></font>
-                    </div>
-                    <div class="col-sm-12"><%=knowledgedataList.get(9).getAbstract()%></div>
-                    <div class="col-sm-10"></div>
-                    <div class="col-sm-2">
-                        <button type="button" class="btn btn-primary btn-xs">编辑</button>
-                        <button type="button" class="btn btn-danger btn-xs">删除</button>
-                    </div>
-                </div>
-            </a>
+                <%
+                        cnt1 += 1;
+                    }
+                %>
 
                 <a href="#">查看更多</a>
             </div>
@@ -479,12 +366,7 @@
 </div>
 
 </div>
-
 <script>
-        <%--var size = <%=i%>;--%>
-        <%--for(var i=0;i<size;i++){--%>
-        <%--    $("#title").append('<a href="#" class="list-group-item" align="center title"><%=request.getSession().getAttribute("title"+i)%></a>');//此处的i有问题--%>
-        <%--}--%>
 </script>
 </body>
 
