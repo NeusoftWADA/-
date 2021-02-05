@@ -57,8 +57,22 @@
             <ul class="nav navbar-nav">
                 <!--导航条内容-->
                 <li class="active"><a href="home_page.jsp">首页 <span
-                        class="sr-only">(current)</span></a></li>
+                        class="sr-only">(current)</span></a>
+                </li>
+                <li>
+                    <!--搜索表单-->
+                    <form class="navbar-form navbar-right" role="search" action="SearchServlet" method="get">
+                        <div class="form-group">
+                            <input type="text" class="form-control" name="search" placeholder="Search" />
+                        </div>
+                        <button type="submit" class="btn btn-default">搜索</button>
+                    </form>
+                </li>>
+
             </ul>
+
+
+
             <ul class="nav navbar-nav navbar-right">
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown"
@@ -72,44 +86,38 @@
                 </li>
 
 
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"
-                       role="button" aria-expanded="false">联系我们<span
-                            class="caret"></span></a>
-                    <ul class="dropdown-menu" role="menu">
-                        <li><a href="#">地址</a></li>
-                        <li><a href="#">电话</a></li>
-                        <li><a href="#">邮箱</a></li>
-                        <li class="divider"></li>
-                        <li><a href="#">微信</a></li>
-                    </ul>
-                </li>
+<%--                <li class="dropdown">--%>
+<%--                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"--%>
+<%--                       role="button" aria-expanded="false">联系我们<span--%>
+<%--                            class="caret"></span></a>--%>
+<%--                    <ul class="dropdown-menu" role="menu">--%>
+<%--                        <li><a href="#">地址</a></li>--%>
+<%--                        <li><a href="#">电话</a></li>--%>
+<%--                        <li><a href="#">邮箱</a></li>--%>
+<%--                        <li class="divider"></li>--%>
+<%--                        <li><a href="#">微信</a></li>--%>
+<%--                    </ul>--%>
+<%--                </li>--%>
             </ul>
             <ul class="nav navbar-nav navbar-right">
 
                 <li>
                     <a class="nav-link navbar-item active">
-                        <img src="<%=user_session.getAvatar()%>" alt="" height="25px" width="25px" id="avatar">
+                        <img src="<%=user_session.getAvatar()%>" alt="" height="29px" width="29px" id="avatar" style="border-radius: 100%">
                         您好, <%=user_session.getName()%> 欢迎访问~
                     </a>
                 </li>
             </ul>
-            <!--搜索表单-->
-            <form class="navbar-form navbar-right" role="search" action="SearchServlet" method="get">
-                <div class="form-group">
-                    <input type="text" class="form-control" name="search" placeholder="Search" />
-                </div>
-                <button type="submit" class="btn btn-default">搜索</button>
-            </form>
+
         </div>
     </div>
 </nav>
 <div class="container" style="margin-top: -15px">
     <div class="row">
 
-        
+
         <div class="col-md-3 col-sm-3">
-            <h4 align="center">热门标签</h4>
+            <h4 align="center">热门分类</h4>
             <hr>
             <table class="mes_l">
                 <tbody>
@@ -117,14 +125,14 @@
                     <td>
                         <form action="SearchServlet" method="get">
                             <div class="form-group">
-                                <input type="hidden" value="JAVA" name="search" />
-                                <button type="submit" class="btn btn-default" style="width: 260px">JAVA</button>
+                                <input type="hidden" value="C++" name="search" />
+                                <button type="submit" class="btn btn-default" style="width: 260px">C++</button>
                             </div>
                         </form>
                         <form action="SearchServlet" method="get">
                             <div class="form-group">
-                                <input type="hidden" value="C" name="search" />
-                                <button type="submit" class="btn btn-default" style="width: 260px">C</button>
+                                <input type="hidden" value="Linux" name="search" />
+                                <button type="submit" class="btn btn-default" style="width: 260px">Linux</button>
                             </div>
                         </form>
                         <form action="SearchServlet" method="get">
@@ -135,14 +143,14 @@
                         </form>
                         <form action="SearchServlet" method="get">
                             <div class="form-group">
-                                <input type="hidden" value="CSS" name="search" />
-                                <button type="submit" class="btn btn-default" style="width: 260px">CSS</button>
+                                <input type="hidden" value="算法" name="search" />
+                                <button type="submit" class="btn btn-default" style="width: 260px">算法</button>
                             </div>
                         </form>
                         <form action="SearchServlet" method="get">
                             <div class="form-group">
-                                <input type="hidden" value="JS" name="search" />
-                                <button type="submit" class="btn btn-default" style="width: 260px">JS</button>
+                                <input type="hidden" value="GitHub" name="search" />
+                                <button type="submit" class="btn btn-default" style="width: 260px">GitHub</button>
                             </div>
                         </form>
                         <form action="SearchServlet" method="get">
@@ -173,9 +181,6 @@
                     <div class="list-group" id="title">
                         <a class="list-group-item active" align="center">知识库</a>
 
-                        <!-- 问题所在：展示的词条与搜索的词条数量不一样，会展示不全，甚至会出现符号 -->
-                        <!-- 今天先到这，明天一定解决  =_=  -->
-
                         <%
                             //取出数据
                             int cnt = knowledgedataList.size();
@@ -184,7 +189,11 @@
                         %>
                         <a href="#" class="list-group-item lgi">
                             <div class="row">
-                                <div class="col-sm-9"><h4><font color="#00FF00"><%=knowledgedataList.get(cntt).getTitle()%></font></h4></div>
+
+                                <div class="col-sm-9"><h4><font color="#00FF00">
+                                    <label><span class="badge badge-secondary"><%=cntt + 1%></span></label>
+                                    <%=knowledgedataList.get(cntt).getTitle()%>
+                                </font></h4></div>
                                 <div class="col-sm-3">
                                     <font color="#a9a9a9"><%=knowledgedataList.get(cntt).getCreateTime()%></font>
                                 </div>
