@@ -15,7 +15,7 @@ public class Test {
          */
         Database database = new Database();
         database.getConnection();
-//        System.out.println(database.getConnection());
+        System.out.println(database.getConnection());
 
 //        String str = "Java,C语言,Python";
 //        String[] res = str.split(",");
@@ -28,17 +28,6 @@ public class Test {
 //        set_cate.add(2);
 //        System.out.println(set_cate.get(0));
 
-        String sql = "SELECT * FROM `knowledge` ORDER BY createTime DESC LIMIT 10";
-
-        PreparedStatement preparedStatement1 = database.getConnection().prepareStatement(sql);
-        ResultSet resultSet1 = preparedStatement1.executeQuery();
-        List<Knowledgedata> knowledgedataList = new ArrayList<Knowledgedata>();
-        while ( resultSet1.next() ) {
-            Knowledgedata knowledgedata = new Knowledgedata(resultSet1.getInt(1), resultSet1.getInt(2), resultSet1.getString(3), resultSet1.getString(4), resultSet1.getString(5), resultSet1.getString(6));
-            knowledgedataList.add(knowledgedata);
-
-        }
-        System.out.println(knowledgedataList.get(0).getTitle());
 
 
     }

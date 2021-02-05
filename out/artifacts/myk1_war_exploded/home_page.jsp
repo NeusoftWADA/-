@@ -143,26 +143,26 @@
                 <!--导航条内容-->
                 <li class="active"><a href="#">首页 <span
                         class="sr-only">(current)</span></a></li>
-                <li><a href="#">JAVA</a></li>
-                <li><a href="#">PS</a></li>
-                <li><a href="#">C++</a></li>
+                <li><a href="SearchServlet?search=JAVA">JAVA</a></li>
+                <li><a href="SearchServlet?search=PS">PS</a></li>
+                <li><a href="SearchServlet?search=C%2B%2B">C++</a></li>
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown"
                        role="button" aria-expanded="false">更多<span
                             class="caret"></span></a>
                     <ul class="dropdown-menu" role="menu">
-                        <li><a href="#">Vue</a></li>
-                        <li><a href="#">C#</a></li>
-                        <li><a href="#">Html</a></li>
-                        <li><a href="#">C#高级</a></li>
-                        <li><a href="#">Python</a></li>
+                        <li><a href="SearchServlet?search=Vue">Vue</a></li>
+                        <li><a href="SearchServlet?search=C%23">C#</a></li>
+                        <li><a href="SearchServlet?search=HTML">HTML</a></li>
+                        <li><a href="SearchServlet?search=C%23高级">C#高级</a></li>
+                        <li><a href="SearchServlet?search=Python">Python</a></li>
                     </ul>
                 </li>
             </ul>
             <!--搜索表单-->
-            <form class="navbar-form navbar-left" role="search">
+            <form class="navbar-form navbar-left" action="SearchServlet" method="get">
                 <div class="form-group">
-                    <input type="text" class="form-control" placeholder="Search" />
+                    <input type="text" class="form-control" name="search" placeholder="Search" />
                 </div>
                 <button type="submit" class="btn btn-default">搜索</button>
             </form>
@@ -479,7 +479,6 @@
 </div>
 
 </div>
-
 <script>
         <%--var size = <%=i%>;--%>
         <%--for(var i=0;i<size;i++){--%>
