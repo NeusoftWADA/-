@@ -106,6 +106,8 @@
 </nav>
 <div class="container" style="margin-top: -15px">
     <div class="row">
+
+        
         <div class="col-md-3 col-sm-3">
             <h4 align="center">热门标签</h4>
             <hr>
@@ -160,6 +162,8 @@
                 </tbody>
             </table>
         </div>
+
+
         <div class="col-md-9 col-sm-9">
             <img src="https://picbedd.oss-cn-beijing.aliyuncs.com/fengmian.jpg" style="width: 850px; height: 150px" />
             <div style="font-size: x-large" align="center">—————— <font color="blue"><%=count%></font> 个搜索结果——————</div>
@@ -172,13 +176,19 @@
                         <!-- 问题所在：展示的词条与搜索的词条数量不一样，会展示不全，甚至会出现符号 -->
                         <!-- 今天先到这，明天一定解决  =_=  -->
 
+                        <%
+                            //取出数据
+                            int cnt = knowledgedataList.size();
+                            int cntt = 0;
+                            while ( cntt < cnt ) {
+                        %>
                         <a href="#" class="list-group-item lgi">
                             <div class="row">
-                                <div class="col-sm-9"><h4><font color="#00FF00"><%=knowledgedataList.get(0).getTitle()%></font></h4></div>
+                                <div class="col-sm-9"><h4><font color="#00FF00"><%=knowledgedataList.get(cntt).getTitle()%></font></h4></div>
                                 <div class="col-sm-3">
-                                    <font color="#a9a9a9"><%=knowledgedataList.get(0).getCreateTime()%></font>
+                                    <font color="#a9a9a9"><%=knowledgedataList.get(cntt).getCreateTime()%></font>
                                 </div>
-                                <div class="col-sm-12"><%=knowledgedataList.get(0).getAbstract()%></div>
+                                <div class="col-sm-12"><%=knowledgedataList.get(cntt).getAbstract()%></div>
                                 <div class="col-sm-10"></div>
                                 <div class="col-sm-2">
                                     <button type="button" class="btn btn-primary btn-xs">编辑</button>
@@ -186,6 +196,11 @@
                                 </div>
                             </div>
                         </a>
+                        <%
+                                cntt += 1;
+                            }
+                        %>
+
 <%--                        <a href="#" class="list-group-item lgi">--%>
 <%--                            <div class="row">--%>
 <%--                                <div class="col-sm-9"><h4><font color="#00FF00"><%=knowledgedataList.get(1).getTitle()%></font></h4></div>--%>
