@@ -18,6 +18,9 @@
 
 ​		原因：本地使用的Tomcat8，所部署的服务器使用的是Tomcat7版本，会出现JSP编译出错的情况。但实际上搜索功能是可用的，这里放出截图
 
+![搜索C++](https://picbedd.oss-cn-beijing.aliyuncs.com/image-20210207173041245.png)
+
+![搜索Linux](https://picbedd.oss-cn-beijing.aliyuncs.com/image-20210207173059989.png)
 
 ---
 
